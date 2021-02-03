@@ -1,7 +1,7 @@
 body {
 	background-color: $primary;
 
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Quicksand', sans-serif !important;
 }
 
 h2,
@@ -12,4 +12,20 @@ h4 {
 
 p {
 	font-weight: 200;
+}
+
+.btn--main {
+	color: white;
+
+	padding: .8rem 1.5rem;
+ 	border: .4px solid rgba($success, .7);
+
+ 	transition: background-color .6s, border-color .6s;
+
+ 	&:hover {
+ 		background-color: rgba($success, .1);
+
+ 		color: white;
+ 		border-color: rgba($success, 1);
+ 	}
 }

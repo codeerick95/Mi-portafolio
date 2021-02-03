@@ -12,10 +12,14 @@
           </div>
 
           <div class="row mt-3">
-            <div class="col-md-6">
+            <div class="col-md-6 banner__col">
               <p class="banner__description">
                 I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
               </p>
+
+              <div class="text-right mt-4 mr-lg-2">
+                <a href="" class="btn btn--main text-uppercase">Contáctame</a>
+              </div>
             </div>
           </div>
         </div>
@@ -25,11 +29,19 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import HeaderApp from '@/components/global/HeaderApp'
 
 export default {
+  mounted() {
+    this.$store.dispatch('getItems')
+  },
   components: {
     HeaderApp
+  },
+  computed: {
+    ...mapState(['items'])
   }
 }
 </script>
@@ -40,6 +52,7 @@ export default {
 
   &__sub {
     font-size: 1.3em;
+    font-weight: 400;
   }
 
   &__title {
@@ -50,6 +63,12 @@ export default {
 
   &__description {
     color: white;
+  }
+
+  &__col {
+    @media (min-width: 992px) {
+      max-width: 550px;
+    }
   }
 }
 </style>

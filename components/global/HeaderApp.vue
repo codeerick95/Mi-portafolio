@@ -14,6 +14,9 @@
         <li>
           <nuxt-link to="/">Contacto</nuxt-link>
         </li>
+        <li>
+          <nuxt-link to="/practicas">Prácticas</nuxt-link>
+        </li>
       </ul>
     </nav>
 
@@ -118,7 +121,7 @@ export default {}
   width: max-content;
 
   &__line {
-    width: 5px;
+    width: 2px;
     height: 120px;
 
     background-color: rgba($light, .7);
