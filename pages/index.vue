@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <header-app></header-app>
-
+  <div class="animate__animated animate__fadeIn">
     <div class="container banner">
       <div class="row h-100">
         <div class="col-12 h-100 d-flex flex-column justify-content-center">
@@ -14,7 +12,8 @@
           <div class="row mt-3">
             <div class="col-md-6 banner__col">
               <p class="banner__description">
-                I'm a software engineer based in Boston, MA specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.
+                Desarrollador web (Frontend) ubicado en Lima, Perú.
+                Me especializo en el desarrollo de aplicaciones web increíbles con <span class="text-success font-weight-bold">Vuejs</span> y <span class="text-success font-weight-bold">Nuxtjs</span>.
               </p>
 
               <div class="text-right mt-4 mr-lg-2">
@@ -31,14 +30,9 @@
 <script>
 import { mapState } from 'vuex'
 
-import HeaderApp from '@/components/global/HeaderApp'
-
 export default {
   mounted() {
     this.$store.dispatch('getItems')
-  },
-  components: {
-    HeaderApp
   },
   computed: {
     ...mapState(['items'])
