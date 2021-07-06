@@ -1,8 +1,8 @@
 <template>
-  <div class="animate__animated animate__fadeInLeft">
+  <div class="blog animate__animated animate__fadeInLeft">
     <div class="container banner">
       <div class="row h-100">
-        <div class="col-12 h-100 d-flex flex-column justify-content-center">
+        <div class="col-md-12 h-100 d-flex flex-column justify-content-center">
           <h1 class="banner__title">Blog</h1>
 
           <div class="row mt-3">
@@ -16,14 +16,28 @@
                 Espero poder aportar a la comunidad con tutoriales simples y prácticos sobre el desarrollo de <span class="text-success font-weight-bold">Vuejs</span> en general.
               </p>
 
-              <small class="text-white">Por si te interesa también escribo sobre <nuxt-link to="/" class="text-warning">política</nuxt-link> y <nuxt-link to="/" class="text-warning">opiniones personales</nuxt-link> acerca de distintos temas de interés común.</small>
+              <small class="text-white d-inline-block mt-4">Por si te interesa también escribo sobre <nuxt-link to="/" class="text-warning">política</nuxt-link> y <nuxt-link to="/" class="text-warning">opiniones personales</nuxt-link> acerca de distintos temas de interés común.</small>
+
+              <div class="form-group mt-3 position-relative">
+                <input type="text" placeholder="Email" class="form-control blog__email bg-transparent">
+
+                <input type="submit" class="blog__btn text-white font-weight-bold px-3" value="Suscribirme">
+              </div>
+            </div>
+
+            <div class="col-md-5 text-center">
+              <img src="/imagenes/blog.png" alt="" class="blog__imagen-banner animate__animated animate__pulse animate__infinite  infinite animate__slower">
+
+              <p class="small">
+                Illustration by <a href="https://icons8.com/illustrations/author/5fe0d309487a404a84cd3917">Lazarus_al</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="categorias" class="container categorias-blog">
+    <!-- <div id="categorias" class="container categorias-blog">
       <div class="row justify-content-center">
 
         <div class="col-7 px-lg-0 mb-3">
@@ -40,7 +54,39 @@
           <span class="text-muted">10</span>
         </nuxt-link>
       </div>
-    </div>
+    </div> -->
+
+    <section class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-11">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="blog__sub text-white">ARTÍCULOS</h2>
+              </div>
+            </div>
+
+            <!-- Destacados -->
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <card-blog :item="items[0]"></card-blog>
+              </div>
+
+              <div class="col-md-6">
+                <card-blog :item="items[1]"></card-blog>
+              </div>
+            </div>
+
+            <!-- Publicaciones generales -->
+            <div class="row mt-5">
+              <div class="col-md-4" v-for="(item, index) in items" :key="index">
+                <card-blog :item="item"></card-blog>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -48,6 +94,42 @@
 import { mapState } from 'vuex'
 
 export default {
+  data() {
+    return {
+      items: [
+        {
+          imagenFondo: 'https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg',
+          titulo: 'Introducción a los React Hooks',
+          tags: [
+            'Vue',
+            'Nuxt',
+            'Javascript'
+          ],
+          fecha: '05/07/2021'
+        },
+        {
+          imagenFondo: 'https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg',
+          titulo: 'Introducción a los Vuejs',
+          tags: [
+            'Vue',
+            'Nuxt',
+            'Javascript'
+          ],
+          fecha: '05/07/2021'
+        },
+        {
+          imagenFondo: 'https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg',
+          titulo: 'Introducción a React',
+          tags: [
+            'Vue',
+            'Nuxt',
+            'Javascript'
+          ],
+          fecha: '05/07/2021'
+        }
+      ]
+    }
+  },
   mounted() {
     this.$store.dispatch('getItems')
   },
@@ -104,6 +186,64 @@ export default {
   &__titulo {
     font-size: 1em;
     color: rgba(white, .7);
+  }
+}
+
+.blog {
+  &__email {
+    height: 50px;
+
+    color: white !important;
+
+    padding-left: 1rem;
+    border: 1px solid white;
+    border-radius: 1.5rem;
+
+    box-shadow: none !important;
+
+    transition: border .5s;
+
+    &:focus {
+      border: 2px solid white;
+    }
+  }
+
+  &__btn {
+    height: 35px;
+
+    background-color: $app-primary;
+
+    letter-spacing: .1rem;
+
+    border: none;
+    border-radius: 1.5rem;
+
+    position: absolute;
+    top: 7px;
+    right: .6rem;
+
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: #00A375;
+    }
+  }
+
+  &__imagen-banner {
+    max-width: 80%;
+
+    @media (min-width: 768px) {
+      max-width: 70%;
+    }
+  }
+
+  &__sub {
+    font-size: 1.1em;
+    font-weight: 400;
+
+    @media (min-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 }
 </style>

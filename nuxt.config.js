@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'erick',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'es'
     },
     meta: [
       { charset: 'utf-8' },
@@ -31,7 +31,13 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: './plugins/firebase.js' },
+    { src: './plugins/vue-froala.js', mode: 'client'}
   ],
+
+  env: {
+    // FIRE_ENV: process.env.FIRE_ENV
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -44,13 +50,30 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    // '@nuxtjs/firebase'
   ],
   styleResources: {
     scss: [
       './scss/_variables.scss',
       ]
   },
+  /* firebase: {
+    config: {
+      apiKey: "AIzaSyAnsGhm-1Yt8UaxqC8U48FoCu1YdYh6bD4",
+      authDomain: "erick-82dba.firebaseapp.com",
+      projectId: "erick-82dba",
+      storageBucket: "erick-82dba.appspot.com",
+      messagingSenderId: "375771614862",
+      appId: "1:375771614862:web:7922ad00babe2f7cb8c3df",
+      measurementId: "G-5RB9TY14LC"
+    },
+    services: {
+      auth: true,
+      firestore: true,
+      storage: true
+    }
+  }, */
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

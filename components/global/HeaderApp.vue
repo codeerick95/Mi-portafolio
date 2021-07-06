@@ -101,7 +101,7 @@ export default {}
         &:before {
           content: '';
 
-          background-color: rgba($success, .2);
+          background-color: rgba($success, .1);
 
           width: 100%;
           height: 50%;
@@ -136,10 +136,12 @@ export default {}
 
   margin-bottom: .5rem;
 
-  transition: color .5s;
+  transition: color .5s, transform .8s;
 
   &:hover {
     color: white;
+
+    transform: scale(1.3);
   }
 }
 </style>

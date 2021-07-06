@@ -1,7 +1,13 @@
-body {
-	background-color: $primary;
+.main-layout {
+	background-color: $app-dark;
 
 	font-family: 'Quicksand', sans-serif !important;
+
+	transition: background-color 1s;
+
+	&:hover {
+		background-color: #0B0F1E;
+	}
 }
 
 h2,
@@ -28,4 +34,8 @@ p {
  		color: white;
  		border-color: rgba($success, 1);
  	}
+}
+
+.text-primary {
+	color: $app-primary !important;
 }
