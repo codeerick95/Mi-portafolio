@@ -32,7 +32,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: './plugins/firebase.js' },
-    { src: './plugins/vue-froala.js', mode: 'client'}
+    { src: './plugins/vue-froala.js', mode: 'client'},
+    { src: './plugins/prism.js', mode: 'client'},
   ],
 
   env: {

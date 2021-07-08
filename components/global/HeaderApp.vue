@@ -3,10 +3,10 @@
     <nav class="main-nav">
       <ul class="main-nav__list list-unstyled text-right">
         <li>
-          <nuxt-link to="/">Mis trabajos</nuxt-link>
+          <nuxt-link to="/">Sobre mí</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/">Sobre mí</nuxt-link>
+          <nuxt-link to="/portafolio">Portafolio</nuxt-link>
         </li>
         <li>
           <nuxt-link to="/blog">Blog</nuxt-link>

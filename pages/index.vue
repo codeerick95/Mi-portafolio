@@ -1,6 +1,7 @@
 <template>
   <div class="animate__animated animate__fadeIn">
-    <div class="container banner">
+    <section class="banner">
+      <div class="container h-100">
       <div class="row h-100">
         <div class="col-12 h-100 d-flex flex-column justify-content-center">
           <div>
@@ -51,6 +52,7 @@
         </div>
       </div>
     </div>
+    </section>
   </div>
 </template>
 
@@ -70,6 +72,8 @@ export default {
 <style lang="scss">
 .banner {
   height: 100vh;
+
+  background-color: $app-dark;
 
   &__sub {
     font-size: 1.3em;
