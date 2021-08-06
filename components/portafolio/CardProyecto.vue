@@ -4,13 +4,13 @@
 		</section>
 
 		<section class="px-2 py-3">
-			<h3 class="my-0">{{ item.nombre }}</h3>
+			<h3 class="card-proyecto__titulo my-0">{{ item.nombre }}</h3>
 
 			<p class="my-2">
 				{{ item.descripcion }}
 			</p>
 
-			<div class="d-flex justify-content-end px-3 pb-3">
+			<div class="d-flex justify-content-end mt-5 px-3 pb-3">
 				<a :href="item.url" class="card-proyecto__btn text-center d-flex justify-content-center align-items-center position-relative" target="_blank">Ver proyecto</a>
 			</div>
 		</section>
@@ -35,6 +35,14 @@
 		background-size: cover;
 
 		border-radius: .2rem;
+	}
+
+	&__titulo {
+		font-size: 1em;
+
+		@media (min-width: 768px) {
+			font-size: 1.2em;
+		}
 	}
 
 	&__btn {
