@@ -7,14 +7,14 @@ export const proyectos = [
 	},
 	{
 		imagen: '/imagenes/proyectos/kindergarten.png',
-		nombre: 'Plantilla libre - Página web para nido o guardería.',
-		descripcion: '',
+		nombre: 'Plantilla libre',
+		descripcion: 'Web informativa para nido o guardería',
 		url: 'https://distracted-swanson-ec488e.netlify.app/kindergarten/index.html'
 	},
 	{
 		imagen: '/imagenes/proyectos/sweetbox.png',
 		nombre: 'Sweetbox',
-		descripcion: 'Librería Javascript para mostrar imágenes en un lightbox.',
+		descripcion: 'Librería Javascript para mostrar imágenes en un lightbox sin dependencias.',
 		url: 'https://ehldev.github.io/sweetbox_docs'
 	},
 	{
@@ -25,8 +25,8 @@ export const proyectos = [
 	},
 	{
 		imagen: '/imagenes/proyectos/photographer.png',
-		nombre: 'Web de presentación para fotógrafos.',
-		descripcion: 'Plantilla libre',
+		nombre: 'Plantilla libre',
+		descripcion: 'Web de presentación para fotógrafos.',
 		url: 'https://distracted-swanson-ec488e.netlify.app/photographer/index.html'
 	}
 ]

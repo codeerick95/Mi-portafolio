@@ -14,9 +14,9 @@
         <li>
           <nuxt-link to="/">Contacto</nuxt-link>
         </li>
-        <li>
+        <!-- <li>
           <nuxt-link to="/practicas">Prácticas</nuxt-link>
-        </li>
+        </li> -->
       </ul>
     </nav>
 

@@ -34,6 +34,8 @@ export default {
     { src: './plugins/firebase.js' },
     { src: './plugins/vue-froala.js', mode: 'client'},
     { src: './plugins/prism.js', mode: 'client'},
+    { src: './plugins/aos.js', mode: 'client'},
+    { src: "./plugins/smooth-scroll.js", mode: "client" }
   ],
 
   env: {

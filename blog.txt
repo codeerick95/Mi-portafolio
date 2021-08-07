@@ -1,0 +1,3 @@
+Plugins para hacer páginas bonitas e interactivas
+	- Aos
+	- Smoth scroll

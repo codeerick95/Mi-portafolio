@@ -12,6 +12,16 @@
 	} */
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
 h2,
 h3,
 h4 {
@@ -21,6 +31,10 @@ h4 {
 p {
 	font-size: 1.05em;
 	font-weight: 400;
+}
+
+.btn {
+	border-radius: .1rem;
 }
 
 .btn--main {
@@ -37,6 +51,34 @@ p {
  		color: white;
  		border-color: rgba($success, 1);
  	}
+}
+
+.btn-primary {
+	background-color: rgba($app-primary, .9);
+	border-color: $app-primary;
+
+	box-shadow: 11px 11px 12px -8px rgba(0,197,142,0.18) !important;
+	-webkit-box-shadow: 11px 11px 12px -8px rgba(0,197,142,0.18) !important;
+	-moz-box-shadow: 11px 11px 12px -8px rgba(0,197,142,0.18) !important;
+
+	transition: transform .5s;
+
+	&:hover,
+	&:active,
+	&:visited {
+		background-color: $app-primary !important;
+		border-color: $app-primary !important;
+
+		color: white !important;
+
+		box-shadow: 11px 11px 12px -8px rgba(0,197,142,0.18) !important;
+		-webkit-box-shadow: 11px 11px 12px -8px rgba(0,197,142,0.18) !important;
+		-moz-box-shadow: 11px 11px 12px -8px rgba(0,197,142,0.18) !important;
+	}
+
+	&:hover {
+		transform: translateY(-.15rem);
+	}
 }
 
 .text-primary {

@@ -4,7 +4,7 @@
 		</section>
 
 		<section class="px-2 py-3">
-			<h3 class="card-proyecto__titulo my-0">{{ item.nombre }}</h3>
+			<h3 class="card-proyecto__titulo text-primary my-0">{{ item.nombre }}</h3>
 
 			<p class="my-2">
 				{{ item.descripcion }}

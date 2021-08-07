@@ -1,19 +1,19 @@
 <template>
-  <div class="index animate__animated animate__fadeIn">
+  <div class="index">
     <!-- Banner -->
     <section class="banner">
       <div class="container h-100">
         <div class="row h-100">
-          <div class="col-12 h-100 d-flex flex-column justify-content-center">
+          <div class="col-12 h-100 d-flex flex-column justify-content-center mt-5">
             <div>
-              <h2 class="text-primary banner__sub my-0">Hola, mi nombre es</h2>
+              <h2 class="text-primary banner__sub my-0 animate__animated animate__fadeIn">Hola, mi nombre es</h2>
 
               <h1 class="banner__title mt-0">Erick Huamani</h1>
             </div>
 
             <div class="row mt-3">
               <div class="col-md-6 banner__col">
-                <p class="banner__description">
+                <p class="banner__description animate__animated animate__fadeIn">
                   Desarrollador web (Frontend) ubicado en Lima, Perú.
                   Me especializo en el desarrollo de aplicaciones web con <span class="font-weight-bold">Vuejs</span> y <span class="text-primary font-weight-bold">Nuxtjs</span>.
                 </p>
@@ -23,7 +23,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6 position-relative d-flex justify-content-center">
+              <div class="col-md-6 position-relative d-flex justify-content-center" data-aos="flip-up" data-aos-duration="1000">
                 <div class="text-right">
                   <img src="/logos/vuejs.svg" alt="Logo Vue js" class="logo-small animate__animated animate__pulse animate__infinite  infinite animate__slower">
 
@@ -59,7 +59,7 @@
 
     <!-- Información -->
 
-    <article class="container mt-5">
+    <article class="container mt-5" data-aos="fade-in" data-aos-duration="1000">
       <div class="row justify-content-center">
         <div class="col-md-10">
           <h3 class="index__sub font-weight-bold mt-4">Un poco más de mí</h3>
@@ -86,7 +86,7 @@
           <div class="index__logos">
             <div class="row justify-content-center align-items-center text-center mt-3">
               <div class="col-6 col-md-2" v-for="(item, index) in stack" :key="index">
-                <img :src="item.logo" :alt="item.nombre" class="img-fluid">
+                <img :src="item.logo" :alt="item.nombre" class="img-fluid" data-aos="zoom-in" data-aos-duration="1000" :data-aos-delay="index * 100">
               </div>
             </div>
           </div>
