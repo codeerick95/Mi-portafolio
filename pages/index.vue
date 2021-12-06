@@ -221,7 +221,7 @@
             <p>
               O quizá quieras conocer
               <nuxt-link
-                to="/proyectos"
+                to="/portafolio"
                 class="
                   text-dark
                   font-weight-bold
