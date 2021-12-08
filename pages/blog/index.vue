@@ -148,21 +148,9 @@ export default {
 
 <style lang="scss">
 .banner {
-  height: 100vh;
-
   &__sub {
     font-size: 1.3em;
     font-weight: 400;
-  }
-
-  &__title {
-    color: $light;
-    font-size: 3.5em;
-    font-weight: 700;
-  }
-
-  &__description {
-    color: white;
   }
 
   &__col {

@@ -1,8 +1,8 @@
 <template>
   <div class="main-layout">
-    <!-- <header-app></header-app> -->
+    <header-app></header-app>
 
-    <header-provisional></header-provisional>
+    <!--  <header-provisional></header-provisional>  -->
 
     <Nuxt />
   </div>

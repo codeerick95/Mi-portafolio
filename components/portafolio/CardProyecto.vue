@@ -12,8 +12,8 @@
         {{ item.descripcion }}
       </p>
 
-      <div class="mt-4 px-3 pb-3">
-        <a
+      <div class="mt-4 pb-3">
+        <!-- <a
           :href="item.url"
           class="
             card-proyecto__btn
@@ -27,12 +27,17 @@
           "
           target="_blank"
           >Detalles</a
-        >
+        > -->
 
-        <nuxt-link to="/" class="btn btn-dark btn-sm mt-4 ml-md-5">
-          Visitar web
-          <i class="fas fa-external-link-alt"></i>
-        </nuxt-link>
+        <a
+          :href="item.url"
+          class="btn btn-dark btn-sm"
+          target="_blank"
+          >
+            Visitar web
+            <i class="fas fa-external-link-alt"></i>
+        </a
+        >
       </div>
     </section>
   </article>

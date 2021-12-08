@@ -1,6 +1,6 @@
 <template>
-  <header class="header d-flex flex-column justify-content-around align-items-end">
-    <nav class="main-nav">
+  <header class="header d-flex flex-column justify-content-around align-items-end h-100">
+    <nav class="main-nav animate__animated animate__fadeIn" v-if="showNav">
       <ul class="main-nav__list list-unstyled text-right">
         <li>
           <nuxt-link to="/">Sobre mí</nuxt-link>
@@ -14,13 +14,16 @@
         <li>
           <nuxt-link to="/">Contacto</nuxt-link>
         </li>
-        <!-- <li>
-          <nuxt-link to="/practicas">Prácticas</nuxt-link>
-        </li> -->
       </ul>
     </nav>
 
-    <nav class="nav-social d-flex flex-column justify-content-center align-items-center">
+    <button @click="showNav = !showNav" class="hamburger hamburger--collapse p-0" v-else>
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <nav class="nav-social d-flex flex-column justify-content-center align-items-center" :class="{'main-nav animate__animated animate__fadeIn': showNav}">
       <ul class="nav-social__list list-unstyled">
         <li>
           <a href="" class="icon">
@@ -49,23 +52,48 @@
         </li>
       </ul>
 
-      <div class="nav-social__line"></div>
+      <div class="nav-social__line" v-if="showNav"></div>
     </nav>
   </header>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      showNav: true
+    }
+  },
+  mounted() {
+    this.calcularScroll()
+  },
+  methods: {
+    calcularScroll() {
+      let _this = this;
+
+      window.onscroll = function () {
+        let top = parseInt(window.scrollY);
+
+        if (top >= 400) {
+          _this.showNav = false;
+        } else {
+          _this.showNav = true;
+        }
+      };
+    }
+  }
+}
 </script>
 
 <style lang="scss">
 .header {
-  width: 150px;
+  grid-column: 2 / 3;
+
+  padding-right: 1rem;
 
   position: fixed;
   top: 0;
-  right: 2rem;
-  bottom: 0;
+  right: 0;
 
   z-index: 100;
 }
@@ -74,7 +102,7 @@ export default {}
   &__list {
     a {
       font-size: 1.2em;
-      color: $light;
+      color: $app-dark;
 
       text-decoration: none;
       text-transform: uppercase;
@@ -96,12 +124,12 @@ export default {}
       }
 
       &:hover {
-        color: white;
+        color: $app-dark;
 
         &:before {
           content: '';
 
-          background-color: rgba($success, .1);
+          background-color: rgba($success, .2);
 
           width: 100%;
           height: 50%;
@@ -124,13 +152,13 @@ export default {}
     width: 2px;
     height: 120px;
 
-    background-color: rgba($light, .7);
+    background-color: rgba($app-dark, .7);
   }
 }
 
 .icon {
   font-size: 1.5em;
-  color: rgba($light, .7);
+  color: rgba($app-dark, .7);
 
   display: inline-block;
 
@@ -139,9 +167,17 @@ export default {}
   transition: color .5s, transform .8s;
 
   &:hover {
-    color: white;
+    color: $app-dark;
 
     transform: scale(1.3);
   }
+}
+
+.hamburger {
+  margin-right: -10px;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  width: 25px;
 }
 </style>

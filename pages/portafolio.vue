@@ -132,21 +132,9 @@ export default {
 }
 
 .banner {
-  height: 100vh;
-
   &__sub {
     font-size: 1.3em;
     font-weight: 400;
-  }
-
-  &__title {
-    color: $light;
-    font-size: 3.5em;
-    font-weight: 700;
-  }
-
-  &__description {
-    color: white;
   }
 
   &__col {
@@ -157,13 +145,6 @@ export default {
 
   .logo-small {
     max-width: 40px;
-  }
-
-  .logo-nuxt {
-    max-width: 220px;
-    max-height: 50px;
-
-    opacity: 0.4;
   }
 
   &__animacion {

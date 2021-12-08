@@ -5,7 +5,7 @@
       <div class="container h-100">
         <div class="row h-100">
           <div
-            class="col-12 h-100 d-flex flex-column justify-content-center mt-5"
+            class="col-12 h-100 d-flex flex-column justify-content-center"
           >
             <div>
               <h2
@@ -22,18 +22,17 @@
               <h1 class="banner__title mt-0">Erick Huamani</h1>
             </div>
 
-            <div class="row mt-3">
+            <div class="row">
               <div class="col-md-6 banner__col">
                 <p
                   class="banner__description animate__animated animate__fadeIn"
                 >
-                  Desarrollador web (Frontend) ubicado en Lima, Perú. Me
-                  especializo en el desarrollo de aplicaciones web con
-                  <span class="font-weight-bold">Vuejs</span> y
-                  <span class="text-primary font-weight-bold">Nuxtjs</span>.
+                  Desarrollador web (Frontend) ubicado en Lima, Perú.
+                  <br>
+                  Me especializo en el desarrollo y maquetación de aplicaciones web
                 </p>
 
-                <div class="text-right mt-5 mr-lg-2">
+                <div class="text-right mt-4 mr-lg-3">
                   <a href="" class="btn btn--main text-uppercase">Contáctame</a>
                 </div>
               </div>
@@ -96,7 +95,7 @@
                     <img
                       src="/logos/nuxt.svg"
                       alt="Logo Javascript"
-                      class="img-fluid logo-nuxt mt-2 mr-3"
+                      class="img-fluid logo-nuxt mt-3 mr-3"
                     />
                     <img
                       src="/logos/nuxt-2.svg"
@@ -115,23 +114,12 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="row d-none">
-          <div class="col-12">
-            <a href="https://icons8.com/icon/3UzMbioJA7La/vuejs">Vuejs icon by Icons8</a>
-            <a href="https://icons8.com/icon/108784/javascript">Javascript icon by Icons8</a>
-            <a href="https://icons8.com/icon/20909/html-5">HTML 5 icon by Icons8</a>
-            <a href="https://icons8.com/icon/21278/css3">CSS3 icon by Icons8</a>
-
-            <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
-          </div>
-        </div> -->
       </div>
     </section>
 
     <!-- Información -->
 
-    <article class="container mt-5" data-aos="fade-in" data-aos-duration="1000">
+    <article class="container" data-aos="fade-in" data-aos-duration="1000">
       <div class="row justify-content-center">
         <div class="col-md-10">
           <h3 class="index__sub font-weight-bold mt-4">Un poco más de mí</h3>
@@ -323,9 +311,7 @@ export default {
 }
 
 .banner {
-  height: 100vh;
-
-  background-color: $app-dark;
+  height: 80vh;
 
   &__sub {
     font-size: 1.3em;
@@ -333,13 +319,13 @@ export default {
   }
 
   &__title {
-    color: $light;
+    color: $app-dark;
     font-size: 3.5em;
     font-weight: 700;
   }
 
   &__description {
-    color: white;
+    font-size: .95em;
   }
 
   &__col {
@@ -355,8 +341,6 @@ export default {
   .logo-nuxt {
     max-width: 220px;
     max-height: 50px;
-
-    opacity: 0.4;
   }
 }
 </style>
