@@ -1,5 +1,11 @@
 export const proyectos = [
 	{
+		imagen: '/imagenes/proyectos/collage.png',
+		nombre: 'Generador de collage',
+		descripcion: 'Elije una plantilla, sube tus imágenes favoritas y descarga un collage.',
+		url: 'https://simple-collage.netlify.app'
+	},
+	{
 		imagen: '/imagenes/proyectos/agap.png',
 		nombre: 'Agap Capacitaciones',
 		descripcion: 'Sitio web informativo sobre capacitaciones impartidas por Agap Capacitaciones.',

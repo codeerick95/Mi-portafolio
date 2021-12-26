@@ -1,6 +1,6 @@
 <template>
   <header class="header d-flex flex-column justify-content-around align-items-end h-100">
-    <nav class="main-nav animate__animated animate__fadeIn" v-if="showNav">
+    <nav class="main-nav animate__animated animate__fadeIn d-none d-lg-block" v-if="showNav">
       <ul class="main-nav__list list-unstyled text-right">
         <li>
           <nuxt-link to="/">Sobre mí</nuxt-link>
@@ -17,6 +17,7 @@
       </ul>
     </nav>
 
+    <!-- Hamburger desktop -->
     <button @click="showNav = !showNav" class="hamburger hamburger--collapse p-0" v-else>
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
@@ -89,13 +90,19 @@ export default {
 .header {
   grid-column: 2 / 3;
 
-  padding-right: 1rem;
+  padding-right: 1.5rem;
 
   position: fixed;
   top: 0;
   right: 0;
+  // bottom: 0;
+  // left: 0;
 
   z-index: 100;
+
+  @media (min-width: 992px) {
+    left: initial;
+  }
 }
 
 .main-nav {

@@ -1,7 +1,7 @@
 
 <template>
   <div class="blog animate__animated animate__fadeInLeft">
-    <div class="container banner">
+    <div class="container banner mt-5">
       <div class="row h-100">
         <div class="col-md-12 h-100 d-flex flex-column justify-content-center">
           <h1 class="banner__title">Blog</h1>
@@ -17,9 +17,7 @@
                 Espero poder aportar a la comunidad con tutoriales simples y prácticos sobre el desarrollo de <span class="text-success font-weight-bold">Vuejs</span> en general.
               </p>
 
-              <small class="text-white d-inline-block mt-4">Por si te interesa también escribo sobre <nuxt-link to="/" class="text-warning">política</nuxt-link> y <nuxt-link to="/" class="text-warning">opiniones personales</nuxt-link> acerca de distintos temas de interés común.</small>
-
-              <div class="form-group mt-3 position-relative">
+              <div class="form-group mt-5 position-relative">
                 <input type="text" placeholder="Email" class="form-control blog__email bg-transparent">
 
                 <input type="submit" class="blog__btn text-white font-weight-bold px-3" value="Suscribirme">
@@ -105,14 +103,13 @@ export default {
     return {
       items: [
         {
-          imagenFondo: 'https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg',
-          titulo: 'Introducción a los React Hooks',
+          imagenFondo: 'https://i.imgur.com/0NrDXes.jpg',
+          titulo: 'Meta tags para seo en NuxtJS',
           tags: [
             'Vue',
             'Nuxt',
-            'Javascript'
           ],
-          fecha: '05/07/2021'
+          fecha: '08/07/2021'
         },
         {
           imagenFondo: 'https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg',
@@ -138,10 +135,8 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('getItems')
   },
   computed: {
-    ...mapState(['items'])
   }
 }
 </script>
@@ -188,10 +183,8 @@ export default {
   &__email {
     height: 50px;
 
-    color: white !important;
-
     padding-left: 1rem;
-    border: 1px solid white;
+    border: 2px solid rgba($app-dark, .6);
     border-radius: 1.5rem;
 
     box-shadow: none !important;
@@ -199,7 +192,7 @@ export default {
     transition: border .5s;
 
     &:focus {
-      border: 2px solid white;
+      border: 2px solid rgba($app-dark, .8);
     }
   }
 

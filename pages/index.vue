@@ -148,6 +148,10 @@
             página, un sitio o una aplicación web moderna.
           </p>
 
+          <div class="mt-4">
+            <a href="" class="btn btn-success">Descargar CV <i class="fas fa-file-download"></i></a>
+          </div>
+
           <h3 class="index__sub font-weight-bold mt-5">
             Mi Stack de programación
           </h3>

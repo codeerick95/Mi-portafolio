@@ -1,6 +1,6 @@
 <template>
 	<article class="card-blog position-relative" v-bind:style="{backgroundImage: 'url(' + item.imagenFondo + ')'}">
-		<section class="card-blog__content text-white d-flex flex-column justify-content-between p-3">
+		<section class="card-blog__content text-white d-flex flex-column justify-content-between py-3 px-4">
 			<div class="card-blog__header">
 				<span>{{ item.fecha }}</span>
 			</div>
