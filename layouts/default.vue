@@ -1,28 +1,41 @@
 <template>
   <div class="main-layout">
-    <header-app></header-app>
+    <HeaderMobile />
+
+    <header-app v-if="$route.name != 'cv'"></header-app>
 
     <!--  <header-provisional></header-provisional>  -->
 
     <Nuxt />
+
+    <NavRedesMobile />
   </div>
 </template>
 
 <script>
 import HeaderApp from '@/components/global/HeaderApp'
-import HeaderProvisional from '@/components/global/HeaderProvisional'
+import HeaderMobile from '@/components/global/HeaderMobile'
+import NavRedesMobile from '@/components/global/NavRedesMobile'
 
 // import { db } from '@/plugins/firebase.js'
 
 export default {
   components: {
     HeaderApp,
-    HeaderProvisional
+    HeaderMobile,
+    NavRedesMobile
   },
   mounted() {
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+.main-layout {
+  padding-bottom: 4rem;
+
+  @media (min-width: 992px) {
+    padding-bottom: 0;
+  }
+}
 </style>

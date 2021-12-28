@@ -1,5 +1,5 @@
 <template>
-  <header class="header d-flex flex-column justify-content-around align-items-end h-100">
+  <header class="header d-none d-lg-flex flex-column justify-content-around align-items-end h-100">
     <nav class="main-nav animate__animated animate__fadeIn d-none d-lg-block" v-if="showNav">
       <ul class="main-nav__list list-unstyled text-right">
         <li>

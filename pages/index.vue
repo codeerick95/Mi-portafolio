@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <!-- Banner -->
-    <section class="banner">
+    <section class="banner px-3">
       <div class="container h-100">
         <div class="row h-100">
           <div
@@ -42,7 +42,7 @@
                 data-aos="flip-up"
                 data-aos-duration="1000"
               >
-                <div class="text-right">
+                <div class="text-right mt-5 mt-lg-0">
                   <img
                     src="/logos/vuejs.svg"
                     alt="Logo Vue js"
@@ -121,7 +121,7 @@
 
     <article class="container" data-aos="fade-in" data-aos-duration="1000">
       <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-11">
           <h3 class="index__sub font-weight-bold mt-4">Un poco más de mí</h3>
 
           <p class="mt-3 mb-0">
@@ -167,7 +167,7 @@
               "
             >
               <div
-                class="col-6 col-md-2"
+                class="col-5 col-md-2"
                 v-for="(item, index) in stack"
                 :key="index"
               >
@@ -315,7 +315,7 @@ export default {
 }
 
 .banner {
-  height: 80vh;
+  height: 95vh;
 
   &__sub {
     font-size: 1.3em;
@@ -343,8 +343,12 @@ export default {
   }
 
   .logo-nuxt {
-    max-width: 220px;
+    max-width: 150px;
     max-height: 50px;
+
+    @media (min-width: 768px) {
+      max-width: 220px;
+    }
   }
 }
 </style>
