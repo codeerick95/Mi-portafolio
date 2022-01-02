@@ -28,8 +28,86 @@
       <p>Linkedin</p>
     </aside>
 
-    <section>
-      
+    <section class="cv__main py-4 px-5">
+      <div>
+        <h3>EXPERIENCIA LABORAL</h3>
+
+        <div class="mt-2">
+          <p>PUESTO MÁS RECIENTE O ACTUAL</p>
+          <div>
+            <span>EMPRESA | </span>
+            <span>PERIODO (MES Y AÑO)</span>
+
+            <ul>
+              <li>Describe tus actividades en viñetas.</li>
+              <li>Destaca tus logros (También en viñetas)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <p>PUESTO MÁS RECIENTE O ACTUAL</p>
+          <div>
+            <span>EMPRESA | </span>
+            <span>PERIODO (MES Y AÑO)</span>
+
+            <ul>
+              <li>Describe tus actividades en viñetas.</li>
+              <li>Destaca tus logros (También en viñetas)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3>FORMACIÓN ACADÉMICA</h3>
+
+        <div class="mt-2">
+          <p>TU CARRERA O ESTUDIOS</p>
+          <div>
+            <span>(Titulado/Pasante/Trunco)</span>
+            <span>INSTITUCIÓN PERIODO</span>
+
+            <ul>
+              <li>Describe tus actividades en viñetas.</li>
+              <li>Destaca tus logros (También en viñetas)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <p>TU CARRERA O ESTUDIOS</p>
+          <div>
+            <span>(Titulado/Pasante/Trunco)</span>
+            <span>INSTITUCIÓN PERIODO</span>
+
+            <ul>
+              <li>Describe tus actividades en viñetas.</li>
+              <li>Destaca tus logros (También en viñetas)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div>
+        <h3>HABILIDADES</h3>
+
+        <ul>
+          <li>Habilidad 1</li>
+          <li>Habilidad 2</li>
+          <li>Habilidad 3</li>
+        </ul>
+      </div> -->
+
+      <div>
+        <h3>CONOCIMIENTOS</h3>
+
+        <ul>
+          <li>Conocimiento 1</li>
+          <li>Conocimiento 2</li>
+          <li>Conocimiento 3</li>
+        </ul>
+      </div>
     </section>
   </main>
 </template>
@@ -51,6 +129,11 @@ export default {
 
   margin: 0 auto;
 
+  p,
+  span {
+    font-size: .8em;
+  }
+
   aside {
     grid-column: 1 / 2;
     background-color: #477EC2;
@@ -66,7 +149,7 @@ export default {
     }
 
     p {
-      font-size: .95em;
+      font-size: .9em;
     }
 
     p.border-bottom {
@@ -83,7 +166,7 @@ export default {
 
   section {
     grid-column: 2 / 3;
-    border: 1px solid;
+    border-right: 1px solid rgba($app-dark, .3);
   }
 
   .line {
@@ -91,6 +174,14 @@ export default {
     height: 2px;
     background-color: white;
     margin: 0 auto;
+  }
+
+  &__main {
+    h3 {
+      font-size: 1em;
+      font-weight: 700;
+      color: #477EC2;
+    }
   }
 }
 </style>

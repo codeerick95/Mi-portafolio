@@ -1,6 +1,6 @@
 
 <template>
-  <div class="blog animate__animated animate__fadeInLeft">
+  <div class="blog animate__animated animate__fadeInLeft pb-5">
     <div class="container banner mt-5">
       <div class="row h-100">
         <div class="col-md-12 h-100 d-flex flex-column justify-content-center">
@@ -17,11 +17,11 @@
                 Espero poder aportar a la comunidad con tutoriales simples y prácticos sobre el desarrollo de <span class="text-success font-weight-bold">Vuejs</span> en general.
               </p>
 
-              <div class="form-group mt-5 position-relative">
+              <!-- <div class="form-group mt-5 position-relative">
                 <input type="text" placeholder="Email" class="form-control blog__email bg-transparent">
 
                 <input type="submit" class="blog__btn text-white font-weight-bold px-3" value="Suscribirme">
-              </div>
+              </div> -->
             </div>
 
             <div class="col-md-5 text-center">
@@ -67,25 +67,24 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h2 class="blog__sub text-white">ARTÍCULOS</h2>
+                <h2 class="blog__sub">ARTÍCULOS DESTACADOS</h2>
               </div>
             </div>
 
             <!-- Destacados -->
             <div class="row mt-4">
-              <div class="col-md-6">
-                <card-blog :item="items[0]"></card-blog>
-              </div>
-
-              <div class="col-md-6">
-                <card-blog :item="items[1]"></card-blog>
+              <div class="col-md-6" v-for="(post, index) in postsDestacados" :key="index">
+                <card-blog :item="post"></card-blog>
               </div>
             </div>
 
             <!-- Publicaciones generales -->
             <div class="row mt-5">
-              <div class="col-md-4" v-for="(item, index) in items" :key="index">
-                <card-blog :item="item"></card-blog>
+              <div class="col-md-12 mb-3">
+                <h2 class="blog__sub">ÚLTIMOS ARTÍCULOS</h2>
+              </div>
+              <div class="col-md-4" v-for="(post, index) in postsNoDestacados" :key="index">
+                <card-blog :item="post"></card-blog>
               </div>
             </div>
           </div>
@@ -98,9 +97,12 @@
 <script>
 import { mapState } from 'vuex'
 
+import { posts } from '@/data/blog'
+
 export default {
   data() {
     return {
+      posts,
       items: [
         {
           imagenFondo: 'https://i.imgur.com/0NrDXes.jpg',
@@ -137,6 +139,12 @@ export default {
   mounted() {
   },
   computed: {
+    postsDestacados() {
+      return this.posts.filter(item => item.destacado)
+    },
+    postsNoDestacados() {
+      return this.posts.filter(item => !item.destacado)
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-	<article class="card-blog position-relative" v-bind:style="{backgroundImage: 'url(' + item.imagenFondo + ')'}">
+	<article class="card-blog position-relative" v-bind:style="{backgroundImage: 'url(' + item.imagenPrincipal + ')'}">
 		<section class="card-blog__content text-white d-flex flex-column justify-content-between py-3 px-4">
 			<div class="card-blog__header">
 				<span>{{ item.fecha }}</span>
@@ -7,7 +7,7 @@
 
 			<div class="card-blog__body">
 				<h3>
-					<nuxt-link to="/" class="text-white font-weight-bold text-decoration-none">{{ item.titulo }}</nuxt-link>
+					<nuxt-link :to="`/blog/${item.slug}`" class="text-white font-weight-bold text-decoration-none">{{ item.titulo }}</nuxt-link>
 				</h3>
 			</div>
 
@@ -19,7 +19,7 @@
 
 				<!-- tags -->
 				<section>
-					<nuxt-link to="/" class="card-blog__tag font-weight-bold mr-3" v-for="tag in item.tags">{{ tag }}</nuxt-link>
+					<nuxt-link to="/" class="card-blog__tag font-weight-bold mr-3" v-for="tag in item.tags">{{ item.id }}</nuxt-link>
 				</section>
 			</div>
 		</section>

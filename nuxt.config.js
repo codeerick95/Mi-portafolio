@@ -18,7 +18,8 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' }
     ],
     script: [
-      { src: 'https://kit.fontawesome.com/3bd84f9f96.js', crossorigin: 'anonymous' }
+      { src: 'https://kit.fontawesome.com/3bd84f9f96.js', crossorigin: 'anonymous' },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js' }
     ]
   },
 

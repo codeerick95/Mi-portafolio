@@ -20,6 +20,7 @@
               </h2>
 
               <h1 class="banner__title mt-0">Erick Huamani</h1>
+              <h2 class="lead text-muted mb-3">@ehldev</h2>
             </div>
 
             <div class="row">
@@ -29,7 +30,7 @@
                 >
                   Desarrollador web (Frontend) ubicado en Lima, Perú.
                   <br>
-                  Me especializo en el desarrollo y maquetación de aplicaciones web
+                  Me especializo en la maquetación e interacción de aplicaciones web.
                 </p>
 
                 <div class="text-right mt-4 mr-lg-3">
@@ -148,9 +149,9 @@
             página, un sitio o una aplicación web moderna.
           </p>
 
-          <div class="mt-4">
+          <!-- <div class="mt-4">
             <a href="" class="btn btn-success">Descargar CV <i class="fas fa-file-download"></i></a>
-          </div>
+          </div> -->
 
           <h3 class="index__sub font-weight-bold mt-5">
             Mi Stack de programación
