@@ -4,7 +4,16 @@
 			<div class="col-md-10">
 				<div class="card border-0">
 					<div class="card-body">
-						<h1 class="font-weight-bold">Captura de pantalla con Javascript</h1>
+						<nuxt-link to="/blog" class="back-icon small text-dark text-decoration-none bg-light d-inline-block py-2 px-3 border">
+							<i class="fas fa-arrow-left"></i>
+							<span class="d-inline-block ml-1">
+								Blog
+							</span>
+						</nuxt-link>
+
+						<AutorInfo />
+
+						<h1 class="font-weight-bold mt-3">{{ post.titulo }}</h1>
 
 						<p class="mt-3">
 							En este tutorial veremos como utilizar la librería <a href="https://html2canvas.hertzen.com" target="_blank" class="font-weight-bold">html2canvas</a> para generar un <i>Screenshot</i> a un elemento o sección en específico.
@@ -13,12 +22,12 @@
 						<section class="mt-4">
 							<h2 class="subtitulo">Para empezar</h2>
 							
-							<div class="mt-2">
+							<div class="mt-1">
 								<p>
 									Debemos descargar <i>html2canvas</i> a nuestro proyecto, para ello podemos hacerlo a travéz del CDN:
 								</p>
 
-								<section class="mt-3">
+								<section class="my-3">
 									<pre><code class="language-html">https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js</code></pre>
 								</section>
 
@@ -29,7 +38,7 @@
 									<pre><code class="language-html">import html2canvas from 'html2canvas';</code></pre>
 								</section>
 
-								<p>Lo siguiente es asignar un ID al elemento padre al que queremos tomar el <i>Screenshot.</i></p>
+								<p class="my-3">Lo siguiente es asignar un ID al elemento padre al que queremos tomar el <i>Screenshot.</i></p>
 
 								<span>Por ejemplo:</span>
 
@@ -40,9 +49,9 @@
 								</div>
 
 
-								<p class="mt-2">Lo siguiente es llamar al método <i>html2canvas()</i> paśandole como primer parámetro el elemento al que asignamos el id y esperando recibir una promesa con el canvas ya procesado.</p>
+								<p class="my-3">Lo siguiente es llamar al método <i>html2canvas()</i> paśandole como primer parámetro el elemento al que asignamos el id y esperando recibir una promesa con el canvas ya procesado.</p>
 
-								<p class="mt-1">Al finalizar la promesa podemos mostrar la imagen de distintas formas o incluso descargarla utilizando líneas de js adicionales (Ver ejemplo completo).</p>
+								<p class="my-3">Al finalizar la promesa podemos mostrar la imagen de distintas formas o incluso descargarla utilizando líneas de js adicionales (Ver ejemplo completo).</p>
 
 								<div class="mt-2">
 									<pre><code class="language-javascript">html2canvas(document.querySelector("#capture")).then(canvas => {
@@ -51,7 +60,7 @@
 });</code></pre>
 								</div>
 
-								<p class="mt-2">¡Eso es todo! para generar y obtener la captura de la sección seleccionada.</p>
+								<p class="my-3">¡Eso es todo! para generar y obtener la captura de la sección seleccionada.</p>
 
 								<div class="alert alert-warning mt-3">
 									¡Advertencia!
@@ -71,14 +80,14 @@ html2canvas(document.querySelector("#capture"), options).then(canvas => {
 });</code></pre>
 								</div>
 
-								<p class="mt-3">
+								<p class="my-3">
 									Para más información sobre la configuración o sobre la librería, se recomienda visitar
 									<a href="https://html2canvas.hertzen.com/documentation" target="_blank">
 										La documentación oficial
 									</a>
 								</p>
 
-								<h2 class="subtitulo mt-4">Ejemplo completo</h2>
+								<h2 class="subtitulo">Ejemplo completo</h2>
 
 								<p class="mt-2">Para nuestro ejemplo utilizaremos un botón para generar el screenshot y luego mostraremos la captura realizada y adicionalmente un botón para descargar la imagen generada.</p>
 
@@ -115,7 +124,7 @@ html2canvas(document.querySelector("#capture"), options).then(canvas => {
 								<p>Deja volar a tu imaginación y busca como poder implementar esta grandiosa librería a tus proyectos y hacer que la interacción con tus usuarios sea fantástica.</p>
 
 								<p class="mt-3">
-									Yo realicé un pequeño proyecto (<a href="" target="_blank">Generador de collage</a>) con Vue js en el cual puse a trabajar esta librería.
+									Yo realicé un pequeño proyecto (<a href="https://simple-collage.netlify.app" target="_blank">Generador de collage</a>) con Vue js en el cual puse a trabajar esta librería.
 								</p>
 							</div>
 						</section>
@@ -127,19 +136,64 @@ html2canvas(document.querySelector("#capture"), options).then(canvas => {
 </template>
 
 <script>
+	import { appConfig } from '@/appConfig'
+
 	import Prism from '~/plugins/prism'
+
+	import { posts } from '@/data/blog'
+
+	import AutorInfo from '@/components/blog/AutorInfo'
 
 	export default {
 		data() {
 			return {
+				appConfig,
 				slug: this.$route.params.slug,
+				posts,
 				generandoCaptura: false,
 				capture: null
 			}
 		},
 
+		head() {
+			let title = `${this.post.titulo} - @ehldev`,
+				image = this.post.imagenPrincipal,
+				description = this.post.descripcionCorta,
+				slug = this.post.slug,
+				url = appConfig.app.url
+
+		    return {
+		        title,
+		        meta: [
+		          	{ hid: 'description', name: 'description', content: description
+		          	},
+		          	{ hid: 'keywords', name: "keywords", content: this.post.keywords },
+		          	{ hid: 'author', name: "author", content: '@ehldev' },
+
+		            // Facebook OpenGraph
+		            {hid: 'ot', property: 'og:title', content: title},
+		            {hid: 'os', property: 'og:site_name', content: '@ehldev'},
+		            {hid: 'oty', property: 'og:type', content: 'website'},
+		            {hid: 'oi', property: 'og:image', content:  image},
+		            {hid: 'od', property: 'og:description', content: description},
+		            {hid: 'ou', property: 'og:url', content: `${url}/productos/${slug}`},
+
+
+			        // Twitter Card
+		            {hid: 'tc', name: 'twitter:card', content: 'summary'},
+		            {hid: 'tt', name: 'twitter:title', content: title},
+		            {hid: 'td', name: 'twitter:description', content: description},
+		            {hid: 'ti', name: 'twitter:image', content: image}
+		        ]
+		    }
+	    },
+
 		mounted() {
 			Prism.highlightAll()
+		},
+
+		components: {
+			AutorInfo
 		},
 
 		methods: {
@@ -169,6 +223,12 @@ html2canvas(document.querySelector("#capture"), options).then(canvas => {
 	                anchorTag.target = '_blank';
 	                anchorTag.click();
 				});
+			}
+		},
+
+		computed: {
+			post() {
+				return this.posts[0]
 			}
 		}
 	}

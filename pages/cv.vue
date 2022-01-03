@@ -8,7 +8,7 @@
       </div>
 
       <p class="mt-2">
-        Describe lo que puedes ofrecer a la empresa. La razón por la que querrán que seas su colaborador (Tú objetivo profesional)
+        En mi corta carrera como programador he enfrentado grandes retos y he estado a cargo de proyectos importantes, siempre dando lo mejor de mí.
       </p>
 
       <div class="line mt-4"></div>
@@ -22,10 +22,10 @@
         <p class="border-bottom d-inline-block mt-2">ehldev.netlify.com</p>
       </div>
 
-      <div class="line mt-4"></div>
+      <!-- <div class="line mt-4"></div>
 
       <p>Facebook</p>
-      <p>Linkedin</p>
+      <p>Linkedin</p> -->
     </aside>
 
     <section class="cv__main py-4 px-5">
@@ -33,57 +33,59 @@
         <h3>EXPERIENCIA LABORAL</h3>
 
         <div class="mt-2">
-          <p>PUESTO MÁS RECIENTE O ACTUAL</p>
+          <p class="font-weight-400">PUESTO MÁS RECIENTE O ACTUAL</p>
           <div>
-            <span>EMPRESA | </span>
-            <span>PERIODO (MES Y AÑO)</span>
+            <span>SOFTAKI</span>
+            <span>(08/2021 - ACTUALIDAD)</span>
 
             <ul>
-              <li>Describe tus actividades en viñetas.</li>
-              <li>Destaca tus logros (También en viñetas)</li>
+              <li>Mantenimiento de web externa en Vuejs.</li>
+              <li>Frontent con Reactjs</li>
             </ul>
           </div>
         </div>
 
         <div>
-          <p>PUESTO MÁS RECIENTE O ACTUAL</p>
+          <p class="font-weight-400">Freelancer</p>
           <div>
-            <span>EMPRESA | </span>
-            <span>PERIODO (MES Y AÑO)</span>
+            <span>Diversos clientes</span>
+            <span>(11/2019 - 07/2021)</span>
 
             <ul>
-              <li>Describe tus actividades en viñetas.</li>
-              <li>Destaca tus logros (También en viñetas)</li>
+              <li>Frontent con Vuejs</li>
+              <li>Desarrollo Frontend de landing Pages, Ecommerce...</li>
+              <li>Desarrollo Frontend de sistemas administrativos.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div>
+      <div class="mt-4">
         <h3>FORMACIÓN ACADÉMICA</h3>
 
         <div class="mt-2">
-          <p>TU CARRERA O ESTUDIOS</p>
+          <p class="font-weight-400">Bootcamp Desarrollo web Full Stack</p>
           <div>
-            <span>(Titulado/Pasante/Trunco)</span>
-            <span>INSTITUCIÓN PERIODO</span>
+            <span>En curso -</span>
+            <span>CodiGo Tecsup</span>
 
             <ul>
-              <li>Describe tus actividades en viñetas.</li>
-              <li>Destaca tus logros (También en viñetas)</li>
+              <li>Programación Frontend: Js Vanilla, React, Firebase</li>
+              <li>Programación Backend: Python, NodeJs</li>
             </ul>
           </div>
         </div>
 
         <div>
-          <p>TU CARRERA O ESTUDIOS</p>
+          <p class="font-weight-400">Desarrollo de sistemas</p>
           <div>
-            <span>(Titulado/Pasante/Trunco)</span>
-            <span>INSTITUCIÓN PERIODO</span>
+            <span>Trunco -</span>
+            <span>IDAT</span>
 
             <ul>
-              <li>Describe tus actividades en viñetas.</li>
-              <li>Destaca tus logros (También en viñetas)</li>
+              <li>Desarrollo de software</li>
+              <li>Fundamentos de algoritmos</li>
+              <li>Programación en Python</li>
             </ul>
           </div>
         </div>
@@ -99,13 +101,12 @@
         </ul>
       </div> -->
 
-      <div>
+      <div class="mt-4">
         <h3>CONOCIMIENTOS</h3>
 
-        <ul>
-          <li>Conocimiento 1</li>
-          <li>Conocimiento 2</li>
-          <li>Conocimiento 3</li>
+        <ul class="pt-2">
+          <li>Html, Css y Javascript</li>
+          <li>Vuejs & Nuxtjs, React & Nextjs, Sass, Firebase, Git</li>
         </ul>
       </div>
     </section>
@@ -130,8 +131,10 @@ export default {
   margin: 0 auto;
 
   p,
-  span {
-    font-size: .8em;
+  span,
+  li {
+    font-size: .9em;
+    font-weight: 200;
   }
 
   aside {

@@ -2,7 +2,8 @@ const posts = [
 	{
 		titulo: 'Captura de pantalla con Javascript',
 		descripcionCorta: 'En este tutorial veremos como utilizar la librería html2canvas para generar una captura a un elemento o sección en específico.',
-		imagenPrincipal: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/GNOME_Screenshot_icon_2018.svg/1200px-GNOME_Screenshot_icon_2018.svg.png',
+		imagenPrincipal: 'https://res.cloudinary.com/ehldev/image/upload/v1641169013/portafolio-ehldev/portada-post-1_pcy6r0.png',
+		keywords: ['Capturas con Js', 'html2canvas', 'Tutorial captura de pantalla con html2canvas'],
 		destacado: true
 	},
 	{
