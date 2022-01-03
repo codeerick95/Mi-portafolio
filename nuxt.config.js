@@ -26,7 +26,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     {
-      src: './scss/app.scss',
+      src: './assets/scss/app.scss',
       lang: 'scss'
     }
   ],
@@ -62,7 +62,7 @@ export default {
   ],
   styleResources: {
     scss: [
-      './scss/_variables.scss',
+      './assets/scss/_variables.scss',
       ]
   },
   /* firebase: {
