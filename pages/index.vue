@@ -149,9 +149,9 @@
             página, un sitio o una aplicación web moderna.
           </p>
 
-          <!-- <div class="mt-4">
-            <a href="" class="btn btn-success">Descargar CV <i class="fas fa-file-download"></i></a>
-          </div> -->
+          <div class="mt-4">
+            <nuxt-link to="/cv" class="btn btn-success">Mostrar CV <i class="fas fa-location-arrow"></i></nuxt-link>
+          </div>
 
           <h3 class="index__sub font-weight-bold mt-5">
             Mi Stack de programación

@@ -1,5 +1,5 @@
 <template>
-  <main class="cv">
+  <main class="cv animate__animated animate__fadeIn">
     <aside class="text-white">
       <h1 class="font-weight-bold mt-3 ml-4">Erick <br> Huamani</h1>
 
@@ -28,12 +28,12 @@
       <p>Linkedin</p> -->
     </aside>
 
-    <section class="cv__main py-4 px-5">
+    <section class="cv__main py-3 px-4">
       <div>
         <h3>EXPERIENCIA LABORAL</h3>
 
         <div class="mt-2">
-          <p class="font-weight-400">PUESTO MÁS RECIENTE O ACTUAL</p>
+          <p class="font-weight-400">DESAROLLADOR FRONTEND</p>
           <div>
             <span>SOFTAKI</span>
             <span>(08/2021 - ACTUALIDAD)</span>
@@ -46,7 +46,7 @@
         </div>
 
         <div>
-          <p class="font-weight-400">Freelancer</p>
+          <p class="font-weight-400 text-uppercase">Freelancer</p>
           <div>
             <span>Diversos clientes</span>
             <span>(11/2019 - 07/2021)</span>
@@ -64,7 +64,8 @@
         <h3>FORMACIÓN ACADÉMICA</h3>
 
         <div class="mt-2">
-          <p class="font-weight-400">Bootcamp Desarrollo web Full Stack</p>
+          <p class="font-weight-400">Plataformas digitales (Platzi, Udemy)</p>
+          <p class="font-weight-400 mt-2">Bootcamp Desarrollo web Full Stack</p>
           <div>
             <span>En curso -</span>
             <span>CodiGo Tecsup</span>
@@ -84,7 +85,6 @@
 
             <ul>
               <li>Desarrollo de software</li>
-              <li>Fundamentos de algoritmos</li>
               <li>Programación en Python</li>
             </ul>
           </div>
@@ -102,11 +102,11 @@
       </div> -->
 
       <div class="mt-4">
-        <h3>CONOCIMIENTOS</h3>
+        <h3>HABILIDADES</h3>
 
         <ul class="pt-2">
-          <li>Html, Css y Javascript</li>
-          <li>Vuejs & Nuxtjs, React & Nextjs, Sass, Firebase, Git</li>
+          <li>Html, Css y Javascript, Vuejs & Nuxtjs, React & Nextjs, Git</li>
+          <li>Maquetación responsive, interactividad y accesibilidad web.</li>
         </ul>
       </div>
     </section>
