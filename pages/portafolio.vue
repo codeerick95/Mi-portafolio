@@ -63,10 +63,21 @@
             <template slot="descripcion">
               <p>
                 En este último año he trabajado en proyectos como Freelance para
-                una agencia en mi país, por lo cual no publico esos proyectos en
-                mi portafolio pero muestro otros proyectos que he desarrolado en
-                mi carrera como Frontend.
+                la agencia <a href="https://www.softaki.com" target="_blank">SOFTAKI</a>
               </p>
+              <p>
+                LLegando a ser parte de desarrollos importantes como:
+              </p>
+
+              <ul class="list-unstyled mt-3">
+                <li>
+                  <a href="https://www.gacetajuridica.com.pe">https://www.gacetajuridica.com.pe</a>
+                </li>
+                <li>
+                  <a href="https://jaamsaonline.com.pe">https://jaamsaonline.com.pe</a>
+                </li>
+                <p>Entre otros...</p>
+              </ul>
             </template>
           </mensaje-rapido>
         </div>
@@ -157,6 +168,10 @@ export default {
 .proyectos {
   &__lista {
     margin-top: 4rem;
+  }
+
+  p {
+    font-size: .95em;
   }
 }
 </style>

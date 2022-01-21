@@ -34,7 +34,7 @@
                 </p>
 
                 <div class="text-right mt-4 mr-lg-3">
-                  <a href="" class="btn btn--main text-uppercase">Contáctame</a>
+                  <a href="" class="btn btn--main text-uppercase" @click.prevent="contacto()">Contáctame</a>
                 </div>
               </div>
 
@@ -194,37 +194,62 @@
             </ul>
           </section> -->
 
-          <section class="mt-5">
-            <mensaje-rapido
-              titulo="Por si deseas contactarme"
-              emoji="/imagenes/smiling.svg"
-            >
-              <template slot="descripcion">
-                <p class="font-weight-200 my-0">
-                  Puedes hacerlo directamente a mi email
-                  <span class="font-weight-400 d-inline-block px-1"
-                    >dev.erick95@gmail.com</span
+          <section id="contacto" class="contact mt-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <mensaje-rapido
+                    titulo="Pongámonos en contacto"
+                    emoji="/imagenes/smiling.svg"
                   >
-                </p>
-              </template>
-            </mensaje-rapido>
-          </section>
+                    <template slot="descripcion">
+                      <p class="font-weight-200 my-0">
+                        Puedes hacerlo directamente
+                      </p>
 
-          <section class="mt-5 pb-5">
-            <p>
-              O quizá quieras conocer
-              <nuxt-link
-                to="/portafolio"
-                class="
-                  text-dark
-                  font-weight-bold
-                  text-decoration-none
-                  d-inline-block
-                  border-bottom
-                "
-                >mis proyectos</nuxt-link
-              >
-            </p>
+                      <ul class="list-unstyled mt-2">
+                        <li>
+                          <p class="font-weight-200 my-0">
+                            <i class="far fa-envelope"></i>
+                            <span class="font-weight-400 d-inline-block px-1"
+                              >dev.erick95@gmail.com</span
+                            >
+                          </p>
+                        </li>
+
+                        <li>
+                          <p class="font-weight-200 my-0">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span class="font-weight-400 d-inline-block px-1"
+                              >+51 923 417 407</span
+                            >
+                          </p>
+                        </li>
+                      </ul>
+                    </template>
+                  </mensaje-rapido>
+                </div>
+
+                <div class="col-12">
+                  <section class="mt-5 pb-5">
+                    <p>
+                      O quizá quieras conocer
+                      <nuxt-link
+                        to="/portafolio"
+                        class="
+                          text-dark
+                          font-weight-bold
+                          text-decoration-none
+                          d-inline-block
+                          border-bottom
+                        "
+                        >mis proyectos</nuxt-link
+                      >
+                    </p>
+                  </section>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
       </div>
@@ -289,6 +314,16 @@ export default {
   computed: {
     ...mapState(["items"]),
   },
+  methods: {
+    contacto() {
+      const myEl = document.getElementById('contacto')
+
+      this.$smoothScroll({
+        scrollTo: myEl,
+        updateHistory: false
+      })
+    }
+  }
 };
 </script>
 
@@ -351,5 +386,9 @@ export default {
       max-width: 220px;
     }
   }
+}
+
+.contact {
+  padding: 3rem 0 5rem 0;
 }
 </style>

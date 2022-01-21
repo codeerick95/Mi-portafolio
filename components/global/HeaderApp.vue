@@ -12,7 +12,8 @@
           <nuxt-link to="/blog">Blog</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/">Contacto</nuxt-link>
+          <!-- <nuxt-link to="/">Contacto</nuxt-link> -->
+          <a href="" @click.prevent="contacto()">Contacto</a>
         </li>
       </ul>
     </nav>
@@ -81,6 +82,18 @@ export default {
           _this.showNav = true;
         }
       };
+    },
+    contacto() {
+      this.$router.push('/')
+
+      setTimeout(() => {
+        const myEl = document.getElementById('contacto')
+
+        this.$smoothScroll({
+          scrollTo: myEl,
+          updateHistory: false
+        })
+      }, 1800)
     }
   }
 }

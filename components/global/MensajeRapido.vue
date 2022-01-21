@@ -1,5 +1,5 @@
 <template>
-	<section class="mensaje-rapido bg-warning px-3 position-relative">
+	<section class="mensaje-rapido px-3 position-relative">
 	    <h3 class="mensaje-rapido__titulo font-weight-bold my-0 py-1 px-2">
 	    	{{ titulo }}
 
@@ -25,9 +25,13 @@
 
 <style lang="scss">
 .mensaje-rapido {
-	border: 2px solid rgba($app-dark, .8);
+	border: 3px solid rgba($app-dark, .8);
 	padding-top: 2.5rem;
 	padding-bottom: 2rem;
+
+	-webkit-box-shadow: 2px 2px 15px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 2px 2px 15px -4px rgba(0,0,0,0.75);
+	box-shadow: 2px 2px 15px -4px rgba(0,0,0,0.75);
 
 	&__titulo {
 		font-size: 1.1em;
