@@ -3,12 +3,18 @@
     <aside class="text-white">
       <h1 class="font-weight-bold mt-3 ml-4">Erick <br> Huamani</h1>
 
-      <div class="text-center mt-3">
-        <img src="https://avatars.githubusercontent.com/u/47234380?v=4" alt="ehldev">
-      </div>
+      <!-- <div class="text-center mt-3">
+        <img src="~/assets/imagenes/erick.jpeg" alt="ehldev">
+      </div> -->
+
+      <div class="user-avatar my-3 mx-auto"></div>
 
       <p class="mt-2">
-        En mi corta carrera como programador he enfrentado grandes retos y he estado a cargo de proyectos importantes, siempre dando lo mejor de mí.
+        En mi carrera como programador he enfrentado grandes retos y he estado a cargo de proyectos importantes, siempre dando lo mejor de mí.
+      </p>
+
+      <p>
+        En constante aprendizaje.
       </p>
 
       <div class="line mt-4"></div>
@@ -19,7 +25,7 @@
         <p>+51 923 417 407</p>
         <p>dev.erick@gmail.com</p>
         <p>Lima - Perú</p>
-        <p class="border-bottom d-inline-block mt-2">ehldev.netlify.com</p>
+        <a href="https://ehldev.netlify.app" class="text-white text-decoration-none border-bottom d-inline-block mt-2">ehldev.netlify.com</a>
       </div>
 
       <!-- <div class="line mt-4"></div>
@@ -28,7 +34,7 @@
       <p>Linkedin</p> -->
     </aside>
 
-    <section class="cv__main py-3 px-4">
+    <section class="cv__main py-4 px-4">
       <div>
         <h3>EXPERIENCIA LABORAL</h3>
 
@@ -64,8 +70,8 @@
         <h3>FORMACIÓN ACADÉMICA</h3>
 
         <div class="mt-2">
-          <p class="font-weight-400">Plataformas digitales (Platzi, Udemy)</p>
-          <p class="font-weight-400 mt-2">Bootcamp Desarrollo web Full Stack</p>
+          <!-- <p class="font-weight-400">Plataformas digitales (Platzi, Udemy)</p> -->
+          <p class="font-weight-400 text-uppercase mt-2">Bootcamp Desarrollo web Full Stack</p>
           <div>
             <span>En curso -</span>
             <span>CodiGo Tecsup</span>
@@ -78,7 +84,7 @@
         </div>
 
         <div>
-          <p class="font-weight-400">Desarrollo de sistemas</p>
+          <p class="font-weight-400 text-uppercase">Desarrollo de sistemas</p>
           <div>
             <span>Trunco -</span>
             <span>IDAT</span>
@@ -105,7 +111,7 @@
         <h3>HABILIDADES</h3>
 
         <ul class="pt-2">
-          <li>Html, Css y Javascript, Vuejs & Nuxtjs, React & Nextjs, Git</li>
+          <li>Html, Css, Javascript, Vuejs & Nuxtjs, React & Nextjs, Git</li>
           <li>Maquetación responsive, interactividad y accesibilidad web.</li>
         </ul>
       </div>
@@ -159,10 +165,22 @@ export default {
       border-bottom: 1px solid rgba(white, .7) !important;
     }
 
-    img {
-      width: 120px;
-      height: 120px;
+    // img {
+    //   width: 150px;
+    //   height: 150px;
 
+    //   object-fit: cover;
+
+    //   border-radius: 50%;
+    // }
+
+    .user-avatar {
+      width: 150px;
+      height: 150px;
+
+      background-image: url('~assets/imagenes/erick.jpeg');
+      background-repeat: round;
+      
       border-radius: 50%;
     }
   }
