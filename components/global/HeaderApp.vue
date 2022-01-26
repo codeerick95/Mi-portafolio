@@ -84,16 +84,25 @@ export default {
       };
     },
     contacto() {
-      this.$router.push('/')
+      if(this.$route.path != '/') {
+        this.$router.push('/')
 
-      setTimeout(() => {
+        setTimeout(() => {
+          const myEl = document.getElementById('contacto')
+
+          this.$smoothScroll({
+            scrollTo: myEl,
+            updateHistory: false
+          })
+        }, 1800)
+      } else {
         const myEl = document.getElementById('contacto')
 
         this.$smoothScroll({
           scrollTo: myEl,
           updateHistory: false
         })
-      }, 1800)
+      }
     }
   }
 }
