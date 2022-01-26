@@ -1,12 +1,12 @@
 <template>
 	<section class="mensaje-rapido px-3 position-relative">
-	    <h3 class="mensaje-rapido__titulo font-weight-bold my-0 py-1 px-2">
+	    <h3 class="mensaje-rapido__titulo font-weight-bold my-0 py-2 px-3">
 	    	{{ titulo }}
 
 	    	<img :src="emoji" alt="Emoji contacto" v-if="emoji" class="mensaje-rapido__emoji">
 	    </h3>
 
-	    <div class="h-100 d-flex align-items-center">
+	    <div class="h-100 d-flex align-items-center mt-2">
 	    	<div>
 	    		<slot name="descripcion"></slot>
 	    	</div>
@@ -35,13 +35,14 @@
 
 	&__titulo {
 		font-size: 1.1em;
+		color: white;
 
-		background-color: white;
+		background-color: $app-primary;
 
-		border: 1px solid $app-dark;
+		border: 2px solid $app-primary;
 
 		position: absolute;
-		top: -10px;
+		top: -15px;
 		left: 1rem;
 	}
 

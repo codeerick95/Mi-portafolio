@@ -33,7 +33,7 @@
         <h3>EXPERIENCIA LABORAL</h3>
 
         <div class="mt-2">
-          <p class="font-weight-400">DESAROLLADOR FRONTEND</p>
+          <p class="font-weight-400 text-uppercase">Freelancer</p>
           <div>
             <span>SOFTAKI</span>
             <span>(08/2021 - ACTUALIDAD)</span>
@@ -49,7 +49,7 @@
           <p class="font-weight-400 text-uppercase">Freelancer</p>
           <div>
             <span>Diversos clientes</span>
-            <span>(11/2019 - 07/2021)</span>
+            <span>(2019 - 07/2021)</span>
 
             <ul>
               <li>Frontent con Vuejs</li>

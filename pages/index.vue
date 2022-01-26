@@ -218,7 +218,7 @@
                         </li>
 
                         <li>
-                          <p class="font-weight-200 my-0">
+                          <p class="font-weight-200 my-2">
                             <i class="fas fa-mobile-alt"></i>
                             <span class="font-weight-400 d-inline-block px-1"
                               >+51 923 417 407</span

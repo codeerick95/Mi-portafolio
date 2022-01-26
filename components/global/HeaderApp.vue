@@ -28,27 +28,27 @@
     <nav class="nav-social d-flex flex-column justify-content-center align-items-center" :class="{'main-nav animate__animated animate__fadeIn': showNav}">
       <ul class="nav-social__list list-unstyled">
         <li>
-          <a href="" class="icon">
+          <a href="https://github.com/ehldev" target="_blank" class="icon">
             <i class="fab fa-github"></i>
           </a>
         </li>
         <li>
-          <a href="" class="icon">
+          <a href="https://www.linkedin.com/in/erick-huamani-lomparte-87066117b" target="_blank" class="icon">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </li>
         <li>
-          <a href="" class="icon">
+          <a href="https://www.instagram.com/ehldev" target="_blank" class="icon">
             <i class="fab fa-instagram"></i>
           </a>
         </li>
         <li>
-          <a href="" class="icon">
+          <a href="https://codepen.io/ehldev" target="_blank" class="icon">
             <i class="fab fa-codepen"></i>
           </a>
         </li>
         <li>
-          <a href="" class="icon">
+          <a href="https://twitter.com/ehldev" target="_blank" class="icon">
             <i class="fab fa-twitter"></i>
           </a>
         </li>
