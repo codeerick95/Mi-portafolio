@@ -58,7 +58,8 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/style-resources',
-    // '@nuxtjs/firebase'
+    // '@nuxtjs/firebase',
+    '@nuxtjs/google-gtag'
   ],
   styleResources: {
     scss: [
@@ -81,6 +82,14 @@ export default {
       storage: true
     }
   }, */
+  'google-gtag': {
+    id: 'G-FP2YNDLT8Z',
+    config: {
+      anonymize_ip: true,
+      send_page_view: false,
+    },
+    debug: true
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
