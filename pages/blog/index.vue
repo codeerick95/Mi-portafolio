@@ -99,6 +99,8 @@ import { mapState } from 'vuex'
 
 import { posts } from '@/data/blog'
 
+import CardBlog from '@/components/blog/CardBlog.vue'
+
 export default {
   data() {
     return {
@@ -137,6 +139,9 @@ export default {
     }
   },
   mounted() {
+  },
+  components: {
+    CardBlog
   },
   computed: {
     postsDestacados() {
