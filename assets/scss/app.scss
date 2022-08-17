@@ -35,6 +35,19 @@ p {
   font-weight: 400;
 }
 
+label {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+input {
+  height: 45px !important;
+}
+
+::placeholder {
+  font-size: .8rem;
+}
+
 .btn {
   border-radius: 0.1rem;
   box-shadow: none !important;

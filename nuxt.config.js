@@ -31,6 +31,10 @@ export default {
     }
   ],
 
+  server: {
+    port: 8000 // default: 3000
+  },
+
   target: 'static',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

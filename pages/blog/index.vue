@@ -1,20 +1,22 @@
-
 <template>
   <div class="blog animate__animated animate__fadeInLeft pb-5">
     <div class="container banner mt-5">
       <div class="row h-100">
         <div class="col-md-12 h-100 d-flex flex-column justify-content-center">
-          <h1 class="banner__title">Blog</h1>
-
-          <div class="row mt-3">
+          <div class="row align-items-center mt-3">
             <div class="col-md-6 banner__col">
-              <p class="banner__description">
-                Un pequeño espacio personal en el que busco compartir lo que he aprendido a lo largo
-                del desarrollo de diversos proyectos.
+              <h1 class="banner__title">Blog</h1>
+
+              <p class="banner__description mt-3">
+                Un pequeño espacio personal en el que busco compartir lo que he
+                aprendido a lo largo del desarrollo de diversos proyectos.
               </p>
 
               <p class="banner__description">
-                Espero poder aportar a la comunidad con tutoriales simples y prácticos sobre el desarrollo de <span class="text-success font-weight-bold">Vuejs</span> en general.
+                Espero poder aportar a la comunidad con tutoriales simples y
+                prácticos sobre el desarrollo de
+                <span class="text-success font-weight-bold">Vuejs</span> en
+                general.
               </p>
 
               <!-- <div class="form-group mt-5 position-relative">
@@ -25,11 +27,23 @@
             </div>
 
             <div class="col-md-5 text-center">
-              <img src="/imagenes/blog.png" alt="" class="blog__imagen-banner animate__animated animate__pulse animate__infinite  infinite animate__slower">
+              <div>
+                <p class="attribution small">
+                  Illustration by
+                  <a
+                    href="https://icons8.com/illustrations/author/5fe0d309487a404a84cd3917"
+                    >Lazarus_al</a
+                  >
+                  from <a href="https://icons8.com/illustrations">Ouch!</a>
+                </p>
+                <img
+                  src="/imagenes/blog.png"
+                  alt=""
+                  class="blog__imagen-banner animate__animated animate__pulse animate__infinite infinite animate__slower"
+                />
+              </div>
 
-              <p class="small">
-                Illustration by <a href="https://icons8.com/illustrations/author/5fe0d309487a404a84cd3917">Lazarus_al</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
-              </p>
+              <SubscribeButton class="mt-4" />
             </div>
           </div>
         </div>
@@ -73,7 +87,11 @@
 
             <!-- Destacados -->
             <div class="row mt-4">
-              <div class="col-md-6" v-for="(post, index) in postsDestacados" :key="index">
+              <div
+                class="col-md-6"
+                v-for="(post, index) in postsDestacados"
+                :key="index"
+              >
                 <card-blog :item="post"></card-blog>
               </div>
             </div>
@@ -83,7 +101,11 @@
               <div class="col-md-12 mb-3">
                 <h2 class="blog__sub">ÚLTIMOS ARTÍCULOS</h2>
               </div>
-              <div class="col-md-4" v-for="(post, index) in postsNoDestacados" :key="index">
+              <div
+                class="col-md-4"
+                v-for="(post, index) in postsNoDestacados"
+                :key="index"
+              >
                 <card-blog :item="post"></card-blog>
               </div>
             </div>
@@ -91,15 +113,27 @@
         </div>
       </div>
     </section>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-5">
+          <SubscribeForm />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
-import { posts } from '@/data/blog'
+import { posts } from "@/data/blog";
 
-import CardBlog from '@/components/blog/CardBlog.vue'
+import SubscribeButton from "@/components/blog/suscription/SubscribeButton";
+import SubscribeForm from "@/components/blog/suscription/SubscribeForm";
+import CardBlog from "@/components/blog/CardBlog.vue";
+
+import suscriptionService from "@/services/suscriptions.js";
 
 export default {
   data() {
@@ -107,51 +141,49 @@ export default {
       posts,
       items: [
         {
-          imagenFondo: 'https://i.imgur.com/0NrDXes.jpg',
-          titulo: 'Meta tags para seo en NuxtJS',
-          tags: [
-            'Vue',
-            'Nuxt',
-          ],
-          fecha: '08/07/2021'
+          imagenFondo: "https://i.imgur.com/0NrDXes.jpg",
+          titulo: "Meta tags para seo en NuxtJS",
+          tags: ["Vue", "Nuxt"],
+          fecha: "08/07/2021",
         },
         {
-          imagenFondo: 'https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg',
-          titulo: 'Introducción a los Vuejs',
-          tags: [
-            'Vue',
-            'Nuxt',
-            'Javascript'
-          ],
-          fecha: '05/07/2021'
+          imagenFondo:
+            "https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg",
+          titulo: "Introducción a los Vuejs",
+          tags: ["Vue", "Nuxt", "Javascript"],
+          fecha: "05/07/2021",
         },
         {
-          imagenFondo: 'https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg',
-          titulo: 'Introducción a React',
-          tags: [
-            'Vue',
-            'Nuxt',
-            'Javascript'
-          ],
-          fecha: '05/07/2021'
-        }
-      ]
-    }
+          imagenFondo:
+            "https://filisantillan.com/content/images/size/w850/2020/12/hooks.jpg",
+          titulo: "Introducción a React",
+          tags: ["Vue", "Nuxt", "Javascript"],
+          fecha: "05/07/2021",
+        },
+      ],
+    };
   },
-  mounted() {
-  },
+  mounted() {},
   components: {
-    CardBlog
+    CardBlog,
+    SubscribeButton,
+    SubscribeForm
+  },
+  methods: {
+    async submit() {
+      let result = await suscriptionService.create();
+      console.log(result);
+    },
   },
   computed: {
     postsDestacados() {
-      return this.posts.filter(item => item.destacado)
+      return this.posts.filter((item) => item.destacado);
     },
     postsNoDestacados() {
-      return this.posts.filter(item => !item.destacado)
-    }
-  }
-}
+      return this.posts.filter((item) => !item.destacado);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -170,15 +202,15 @@ export default {
 
 .categorias-blog {
   &__item {
-    background-color: rgba($primary2, .1);
+    background-color: rgba($primary2, 0.1);
 
-    border-bottom: 1px solid rgba(white, .02);
-    border-radius: .1rem;
+    border-bottom: 1px solid rgba(white, 0.02);
+    border-radius: 0.1rem;
 
-    transition: background-color .5s;
+    transition: background-color 0.5s;
 
     &:hover {
-      background-color: rgba($primary2, .5);
+      background-color: rgba($primary2, 0.5);
     }
   }
 
@@ -188,7 +220,7 @@ export default {
 
   &__titulo {
     font-size: 1em;
-    color: rgba(white, .7);
+    color: rgba(white, 0.7);
   }
 }
 
@@ -197,15 +229,15 @@ export default {
     height: 50px;
 
     padding-left: 1rem;
-    border: 2px solid rgba($app-dark, .6);
+    border: 2px solid rgba($app-dark, 0.6);
     border-radius: 1.5rem;
 
     box-shadow: none !important;
 
-    transition: border .5s;
+    transition: border 0.5s;
 
     &:focus {
-      border: 2px solid rgba($app-dark, .8);
+      border: 2px solid rgba($app-dark, 0.8);
     }
   }
 
@@ -214,28 +246,24 @@ export default {
 
     background-color: $app-primary;
 
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
 
     border: none;
     border-radius: 1.5rem;
 
     position: absolute;
     top: 7px;
-    right: .6rem;
+    right: 0.6rem;
 
-    transition: background-color .3s;
+    transition: background-color 0.3s;
 
     &:hover {
-      background-color: #00A375;
+      background-color: #00a375;
     }
   }
 
   &__imagen-banner {
     max-width: 80%;
-
-    @media (min-width: 768px) {
-      max-width: 70%;
-    }
   }
 
   &__sub {
@@ -245,6 +273,10 @@ export default {
     @media (min-width: 768px) {
       font-size: 1.5em;
     }
+  }
+
+  .attribution {
+    margin-top: -30%;
   }
 }
 </style>
