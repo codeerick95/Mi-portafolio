@@ -73,7 +73,8 @@ export default {
     '@nuxtjs/style-resources',
     // '@nuxtjs/firebase',
     '@nuxtjs/google-gtag',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
   styleResources: {
     scss: [
@@ -106,6 +107,38 @@ export default {
   },
   axios: {
     baseURL: config.api.url, // Used as fallback if no runtime config is provided
+  },
+  auth: {
+    redirect: {
+      login: '/admin/login',
+      logout: '/'
+    },
+    strategies: {
+      local: {
+        // token: {
+        //   property: 'access_token',
+        //   required: true,
+        //   type: 'Bearer'
+        // },
+        // user: {
+        //   property: false, // <--- Default "user"
+        //   autoFetch: true
+        // },
+        token: {
+          property: 'token',
+          global: true,
+        },
+        user: {
+          property: 'user', // the name of your object in your backend response payload
+        },
+        endpoints: {
+          login: { url: 'auth/login', method: 'post', propertyName: 'data.token' },
+          user: { url: 'auth/user', method: 'get', propertyName: 'data.user' },
+          logout: false,
+          tokenRequired: true
+        }
+      }
+    }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

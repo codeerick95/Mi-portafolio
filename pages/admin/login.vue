@@ -1,35 +1,66 @@
 <template>
-	<section>
-		<b-form @submit.prevent="login">
-			<b-form-input type="email" required v-model="email"></b-form-input>
-			<b-form-input type="password" required v-model="password"></b-form-input>
+  <section class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <article class="card mt-5">
+          <div class="card-body">
+            <h1 class="font-weight-bold">Ingresar</h1>
+            <p class="small">Sitio web privado, solo acceso autorizado.</p>
 
-			<b-button type="submit">Button</b-button>
-		</b-form>
-	</section>
+            <form action="" class="mt-2" @submit.prevent="login()">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" v-model="form.email" />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  v-model="form.password"
+                />
+              </div>
+
+              <div class="form-group text-right">
+                <input type="submit" class="btn btn-primary" />
+              </div>
+            </form>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-	export default {
-		layout: 'admin',
-		data() {
-			return {
-				email: null,
-				password: null
-			}
-		},
-		methods: {
-			login() {
-				let data = {
-					email: this.email,
-					password: this.password
-				}
+export default {
+  layout: "default",
+  data() {
+    return {
+      form: {
+        email: 'e@test.com',
+        password: 'secret',
+      },
+    };
+  },
+  methods: {
+    async login() {
+      try {
+        let { email, password } = this.form;
 
-				this.$store.dispatch('auth/login', data)
-			}
-		}
-	}
+        let data = {
+          email,
+          password,
+        };
+
+        await this.$auth.loginWith('local', {data})
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

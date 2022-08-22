@@ -24,6 +24,7 @@
 <script>
 export default {
   layout: "admin",
+  middleware: 'auth',
   data() {
     return {
       total: 0,
@@ -44,7 +45,7 @@ export default {
 
       let response = await this.$axios.get("/suscriptors", { params });
 
-      this.items = response.data.items.docs;
+      this.items = response.data.docs;
     },
   },
 };

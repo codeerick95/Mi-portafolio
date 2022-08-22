@@ -118,6 +118,9 @@ export const actions = {
 }
 
 export const getters = {
+	currentUser(state) {
+		return state.auth.user
+	},
 	todosCompleted(state) {
 		return state.items.filter(item => item.completed)
 	},

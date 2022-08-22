@@ -19,6 +19,8 @@
                 Hola, mi nombre es
               </h2>
 
+              <a href="" @click.prevent="logout()" v-if="currentUser">Logout</a>
+
               <h1 class="banner__title mt-0">Erick Huamani</h1>
               <h2 class="lead text-muted mb-3">@ehldev</h2>
             </div>
@@ -258,7 +260,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 import MensajeRapido from "@/components/global/MensajeRapido";
 
@@ -313,6 +315,9 @@ export default {
   },
   computed: {
     ...mapState(["items"]),
+    ...mapGetters({
+      currentUser: 'currentUser'
+    })
   },
   methods: {
     contacto() {
@@ -322,6 +327,9 @@ export default {
         scrollTo: myEl,
         updateHistory: false
       })
+    },
+    async logout() {
+      await this.$auth.logout();
     }
   }
 };
