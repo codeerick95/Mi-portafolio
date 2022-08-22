@@ -125,15 +125,11 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 import { posts } from "@/data/blog";
 
 import SubscribeButton from "@/components/blog/suscription/SubscribeButton";
 import SubscribeForm from "@/components/blog/suscription/SubscribeForm";
 import CardBlog from "@/components/blog/CardBlog.vue";
-
-import suscriptionService from "@/services/suscriptions.js";
 
 export default {
   data() {
@@ -168,12 +164,6 @@ export default {
     CardBlog,
     SubscribeButton,
     SubscribeForm
-  },
-  methods: {
-    async submit() {
-      let result = await suscriptionService.create();
-      console.log(result);
-    },
   },
   computed: {
     postsDestacados() {

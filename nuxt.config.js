@@ -1,3 +1,5 @@
+import { config } from './config/app-config'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -56,7 +58,13 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/moment'
   ],
+
+  moment: {
+    defaultLocale: 'es',
+    locales: ['es']
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -64,7 +72,8 @@ export default {
     'bootstrap-vue/nuxt',
     '@nuxtjs/style-resources',
     // '@nuxtjs/firebase',
-    '@nuxtjs/google-gtag'
+    '@nuxtjs/google-gtag',
+    '@nuxtjs/axios'
   ],
   styleResources: {
     scss: [
@@ -94,6 +103,9 @@ export default {
       send_page_view: false,
     },
     debug: true
+  },
+  axios: {
+    baseURL: config.api.url, // Used as fallback if no runtime config is provided
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
