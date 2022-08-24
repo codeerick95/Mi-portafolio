@@ -68,7 +68,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/moment"],
+  buildModules: ["@nuxtjs/moment", "@nuxtjs/pwa"],
 
   moment: {
     defaultLocale: "es",
@@ -98,8 +98,7 @@ export default {
     // '@nuxtjs/firebase',
     "@nuxtjs/google-gtag",
     "@nuxtjs/axios",
-    "@nuxtjs/auth-next",
-    "@nuxtjs/pwa"
+    "@nuxtjs/auth-next"
   ],
   styleResources: {
     scss: ["./assets/scss/_variables.scss"],
