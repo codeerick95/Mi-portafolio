@@ -1,6 +1,11 @@
 <template>
-  <header class="header d-none d-lg-flex flex-column justify-content-around align-items-end h-100">
-    <nav class="main-nav animate__animated animate__fadeIn d-none d-lg-block" v-if="showNav">
+  <header
+    class="header d-none d-lg-flex flex-column justify-content-around align-items-end h-100"
+  >
+    <nav
+      class="main-nav animate__animated animate__fadeIn d-none d-lg-block"
+      v-if="showNav"
+    >
       <ul class="main-nav__list list-unstyled text-right">
         <li>
           <nuxt-link to="/">Sobre mí</nuxt-link>
@@ -15,17 +20,27 @@
           <!-- <nuxt-link to="/">Contacto</nuxt-link> -->
           <a href="" @click.prevent="contacto()">Contacto</a>
         </li>
+        <li v-if="currentUser">
+          <nuxt-link to="/admin" class="main-nav-link text-primary font-weight-bold">Admin</nuxt-link>
+        </li>
       </ul>
     </nav>
 
     <!-- Hamburger desktop -->
-    <button @click="showNav = !showNav" class="hamburger hamburger--collapse p-0" v-else>
+    <button
+      @click="showNav = !showNav"
+      class="hamburger hamburger--collapse p-0"
+      v-else
+    >
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
     </button>
 
-    <nav class="nav-social d-flex flex-column justify-content-center align-items-center" :class="{'main-nav animate__animated animate__fadeIn': showNav}">
+    <nav
+      class="nav-social d-flex flex-column justify-content-center align-items-center"
+      :class="{ 'main-nav animate__animated animate__fadeIn': showNav }"
+    >
       <ul class="nav-social__list list-unstyled">
         <li>
           <a href="https://github.com/ehldev" target="_blank" class="icon">
@@ -33,12 +48,20 @@
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/erick-huamani-lomparte-87066117b" target="_blank" class="icon">
+          <a
+            href="https://www.linkedin.com/in/erick-huamani-lomparte-87066117b"
+            target="_blank"
+            class="icon"
+          >
             <i class="fab fa-linkedin-in"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/ehldev" target="_blank" class="icon">
+          <a
+            href="https://www.instagram.com/ehldev"
+            target="_blank"
+            class="icon"
+          >
             <i class="fab fa-instagram"></i>
           </a>
         </li>
@@ -60,14 +83,16 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
-      showNav: true
-    }
+      showNav: true,
+    };
   },
   mounted() {
-    this.calcularScroll()
+    this.calcularScroll();
   },
   methods: {
     calcularScroll() {
@@ -84,28 +109,33 @@ export default {
       };
     },
     contacto() {
-      if(this.$route.path != '/') {
-        this.$router.push('/')
+      if (this.$route.path != "/") {
+        this.$router.push("/");
 
         setTimeout(() => {
-          const myEl = document.getElementById('contacto')
+          const myEl = document.getElementById("contacto");
 
           this.$smoothScroll({
             scrollTo: myEl,
-            updateHistory: false
-          })
-        }, 1800)
+            updateHistory: false,
+          });
+        }, 1800);
       } else {
-        const myEl = document.getElementById('contacto')
+        const myEl = document.getElementById("contacto");
 
         this.$smoothScroll({
           scrollTo: myEl,
-          updateHistory: false
-        })
+          updateHistory: false,
+        });
       }
-    }
-  }
-}
+    },
+  },
+  computed: {
+    ...mapGetters({
+      currentUser: "currentUser",
+    }),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -136,29 +166,29 @@ export default {
       text-decoration: none;
       text-transform: uppercase;
 
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
 
       display: inline-block;
 
       position: relative;
 
-      transition: color .5s;
+      transition: color 0.5s;
 
       &:before {
-        content: '';
+        content: "";
 
         width: 0;
 
-        transition: width .5s;
+        transition: width 0.5s;
       }
 
       &:hover {
         color: $app-dark;
 
         &:before {
-          content: '';
+          content: "";
 
-          background-color: rgba($success, .2);
+          background-color: rgba($success, 0.2);
 
           width: 100%;
           height: 50%;
@@ -172,6 +202,12 @@ export default {
       }
     }
   }
+
+  &-link {
+    &:hover {
+      color: $app-primary !important;
+    }
+  }
 }
 
 .nav-social {
@@ -181,19 +217,19 @@ export default {
     width: 2px;
     height: 120px;
 
-    background-color: rgba($app-dark, .7);
+    background-color: rgba($app-dark, 0.7);
   }
 }
 
 .icon {
   font-size: 1.5em;
-  color: rgba($app-dark, .7);
+  color: rgba($app-dark, 0.7);
 
   display: inline-block;
 
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 
-  transition: color .5s, transform .8s;
+  transition: color 0.5s, transform 0.8s;
 
   &:hover {
     color: $app-dark;
@@ -206,7 +242,9 @@ export default {
   margin-right: -10px;
 }
 
-.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+.hamburger-inner,
+.hamburger-inner:after,
+.hamburger-inner:before {
   width: 25px;
 }
 </style>

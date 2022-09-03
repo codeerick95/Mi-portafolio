@@ -1,25 +1,29 @@
 <template>
-  <nav>
-      <h2>Nav</h2>
+  <aside class="sidebar vh-100 pt-3 bg-white">
+    <div class="pl-3">
+        <h1 class="title font-weight-bold">@ehldev</h1>
 
-      <ul>
-          <li>Blog</li>
-          <ul>
-              <li><nuxt-link to="/admin/blog">Listar</nuxt-link></li>
-              <li><nuxt-link to="/admin/blog/crear">Crear</nuxt-link></li>
-          </ul>
+        <nuxt-link to="/">Sitio web</nuxt-link>
+    </div>
 
-          <li><nuxt-link to="/admin/suscriptores">Suscriptores</nuxt-link></li>
-      </ul>
-  </nav>
+    <AdminNav />
+  </aside>
 </template>
 
 <script>
-export default {
+import AdminNav from "./AdminNav.vue";
 
-}
+export default {
+  components: {
+    AdminNav,
+  },
+};
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.sidebar {
+  .title {
+    font-size: 1.5em;
+  }
+}
 </style>

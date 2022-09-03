@@ -24,6 +24,10 @@ export default {
         rel: "stylesheet",
         href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
       },
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://cdn.quilljs.com/1.3.6/quill.snow.css'
+      // }
     ],
     script: [
       {
@@ -33,6 +37,12 @@ export default {
       {
         src: "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js",
       },
+      {
+        src: 'https://upload-widget.cloudinary.com/global/all.js'
+      },
+      // {
+      //   src: 'https://cdn.quilljs.com/1.3.6/quill.js'
+      // }
     ],
   },
 
@@ -42,6 +52,11 @@ export default {
       src: "./assets/scss/app.scss",
       lang: "scss",
     },
+    'quill/dist/quill.core.css',
+    // for snow theme
+    'quill/dist/quill.snow.css',
+    // for bubble theme
+    'quill/dist/quill.bubble.css'
   ],
 
   server: {
@@ -58,6 +73,8 @@ export default {
     { src: "./plugins/aos.js", mode: "client" },
     { src: "./plugins/smooth-scroll.js", mode: "client" },
     { src: "./plugins/pdf.js", mode: "client" },
+    { src: "./plugins/vuelidate.js" },
+    { src: '~plugins/nuxt-quill-plugin', ssr: false }
   ],
 
   env: {
@@ -98,7 +115,8 @@ export default {
     // '@nuxtjs/firebase',
     "@nuxtjs/google-gtag",
     "@nuxtjs/axios",
-    "@nuxtjs/auth-next"
+    "@nuxtjs/auth-next",
+    '@nuxtjs/dotenv'
   ],
   styleResources: {
     scss: ["./assets/scss/_variables.scss"],
@@ -128,7 +146,7 @@ export default {
     debug: true,
   },
   axios: {
-    baseURL: config.api.url, // Used as fallback if no runtime config is provided
+    baseURL: process.env.PROJECT_STATUS === 'DEVELOP' ? config.api.urlDev : config.api.url, // Used as fallback if no runtime config is provided
   },
   auth: {
     redirect: {

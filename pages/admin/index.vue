@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<h1>Blog</h1>
+		<h1>Dashboard</h1>
 	</section>
 </template>
 
@@ -9,7 +9,6 @@
 
 	export default {
 		layout: 'admin',
-		middleware: 'auth',
 		data() {
 			return {
 			}

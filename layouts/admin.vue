@@ -1,18 +1,16 @@
 <template>
-	<section class="admin-blog">
-		<h1>Admin</h1>
+	<section class="admin vh-100">
+		<aside class="sidebar">
+			<Sidebar />
+		</aside>
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-3">
-					<Sidebar />
-				</div>
+		<main class="main">
+			<AdminHeader />
 
-				<div class="col-md-9">
-					<Nuxt />
-				</div>
-			</div>
-		</div>
+			<section class="content bg-white">
+				<Nuxt />
+			</section>
+		</main>
 	</section>
 </template>
 
@@ -22,6 +20,7 @@
 	import { auth } from '@/plugins/firebase'
 
 	import Sidebar from '@/components/admin/Sidebar'
+	import AdminHeader from '@/components/admin/AdminHeader'
 
 	export default {
 		layout: 'admin',
@@ -41,7 +40,8 @@
 			console.log(auth)
 		},
 		components: {
-			Sidebar	
+			Sidebar,
+			AdminHeader
 		},
 		computed: {
 			...mapState({
@@ -51,5 +51,21 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.admin {
+	font-family: 'Roboto', sans-serif !important;
+
+	@media (min-width: 992px) {
+		display: grid;
+		grid-template-columns: 250px 1fr;
+	}
+
+	.main {
+		padding: 16px;
+	}
+
+	.content {
+		height: calc(100vh - 88px);
+	}
+}
 </style>

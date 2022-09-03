@@ -1,11 +1,14 @@
+@import "./utils";
 @import "./librerias/prism";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import "./layouts/admin-layout";
 
 .main-layout {
   // background-color: $app-dark;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 
   transition: background-color 1s;
 }
