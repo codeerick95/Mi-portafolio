@@ -93,6 +93,21 @@
             </div>
 
             <div class="form-group">
+              <label for="summary">Resumen</label>
+
+              <textarea
+                id="summary"
+                class="form-control"
+                v-model="form.summary"
+              ></textarea>
+
+              <FormError
+                text="El campo es requerido"
+                v-if="$v.form.description.$error"
+              />
+            </div>
+
+            <div class="form-group">
               <label for="url">Url</label>
               <input
                 type="text"
@@ -103,10 +118,37 @@
             </div>
 
             <div class="form-group">
+              <label for="image">Imagen destacada</label>
+
+              <section>
+                <button
+                  type="button"
+                  class="btn btn-info"
+                  @click="uploadFiles('image')"
+                >
+                  Seleccionar
+                </button>
+              </section>
+
+              <FormError
+                text="El campo es requerido"
+                v-if="$v.form.image.$error"
+              />
+
+              <section class="mt-5" v-if="form.image">
+                <img :src="form.image.url" alt="" class="img-fluid" />
+              </section>
+            </div>
+
+            <div class="form-group">
               <label for="images">Imágenes</label>
 
               <section>
-                <button class="btn btn-info" @click="uploadFiles">
+                <button
+                  type="button"
+                  class="btn btn-info"
+                  @click="uploadFiles('images')"
+                >
                   Subir imágenes
                 </button>
               </section>
@@ -158,10 +200,11 @@
 
 <script>
 import { mapGetters } from "vuex";
-
+import hljs from "highlight.js";
 import { required } from "vuelidate/lib/validators";
 
-import hljs from "highlight.js";
+import helpers from '@/utils/helpers'
+import cloudinaryConfig from "@/config/cloudinary";
 
 import AdminLoading from "@/components/admin/AdminLoading";
 import FormError from "@/components/global/FormError";
@@ -171,11 +214,14 @@ export default {
   middleware: "auth",
   data() {
     return {
+      slug: this.$route.params.slug,
       loading: false,
       form: {
         title: null,
         description: "",
+        summary: "",
         slug: null,
+        image: null,
         images: [],
         url: null,
         status: null,
@@ -219,8 +265,15 @@ export default {
     form: {
       title: { required },
       description: { required },
+      summary: { required },
+      image: { required },
       level: { required },
     },
+  },
+  watch: {
+    'form.title': function(val) {
+      this.form.slug = helpers.sluglify(val)
+    }
   },
   methods: {
     async submit() {
@@ -228,47 +281,38 @@ export default {
       if (this.$v.$error) return;
 
       try {
-        console.log(this.form.level);
-
         let item = await await this.$axios.post("/projects", {
           ...this.form,
         });
 
-        console.log(item);
+        this.$router.push({ name: "admin-projects" });
+
+        this.$toast.success("Producto agregado", {
+          position: "top-right",
+          duration: 2000,
+        });
       } catch (error) {}
     },
-    uploadFiles() {
+    uploadFiles(type) {
       var myWidget = cloudinary.createUploadWidget(
-        {
-          cloudName: "ehldev",
-          uploadPreset: "web_personal",
-          language: "es",
-          text: {
-            es: {
-              queue: {
-                title: "Archivos a subir",
-                title_uploading_with_counter: "Uploading {{num}} files",
-              },
-              crop: {
-                title: "Crop your image",
-              },
-              local: {
-                browse: "Explorar",
-                dd_title_multi: "Arrastre o suelte un archivo aquí",
-              },
-            },
-          },
-        },
+        cloudinaryConfig,
         (error, result) => {
           if (!error && result && result.event === "success") {
             console.log("Done");
             console.log(result.info);
-            this.form.images.push({
+
+            let image = {
               url: result.info.secure_url,
               thumbnail_url: result.info.thumbnail_url,
               path: result.info.path,
               description: null,
-            });
+            };
+
+            if (type === "image") {
+              this.form.image = image;
+            } else {
+              this.form.images.push(image);
+            }
           }
         }
       );

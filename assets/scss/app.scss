@@ -47,6 +47,14 @@ input {
   height: 45px !important;
 }
 
+textarea {
+  min-height: 75px;
+}
+
+.form-control {
+  box-shadow: none !important;
+}
+
 ::placeholder {
   font-size: .8rem;
 }

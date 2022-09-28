@@ -92,7 +92,7 @@ export default {
             },
             {
               text: "Agregar",
-              routeName: "admin-projects-create",
+              routeName: "admin-projects-form",
             },
             {
               text: "Listar",

@@ -11,7 +11,7 @@
           <nuxt-link to="/">Sobre mí</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/portafolio">Portafolio</nuxt-link>
+          <nuxt-link to="/proyectos">Portafolio</nuxt-link>
         </li>
         <li>
           <nuxt-link to="/blog">Blog</nuxt-link>

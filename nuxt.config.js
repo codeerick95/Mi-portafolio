@@ -116,7 +116,9 @@ export default {
     "@nuxtjs/google-gtag",
     "@nuxtjs/axios",
     "@nuxtjs/auth-next",
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    'vue-sweetalert2/nuxt',
+    '@nuxtjs/toast'
   ],
   styleResources: {
     scss: ["./assets/scss/_variables.scss"],
@@ -183,6 +185,10 @@ export default {
         },
       },
     },
+  },
+  sweetalert: {
+    confirmButtonColor: '#00c58e',
+    cancelButtonColor: '#ff7674'
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

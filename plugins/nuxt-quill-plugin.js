@@ -1,4 +1,6 @@
 
+// Tutorial https://programmerclick.com/article/51311267118/
+
 import Vue from 'vue'
 import VueQuillEditor from 'vue-quill-editor'
  

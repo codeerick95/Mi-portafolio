@@ -15,7 +15,7 @@
 		          <a href="" class="nav-mobile-link" @click.prevent="to('/')">Sobre mí</a>
 		        </li>
 		        <li>
-		          <a href="" class="nav-mobile-link" @click.prevent="to('/portafolio')">Portafolio</a>
+		          <a href="" class="nav-mobile-link" @click.prevent="to('/proyectos')">Portafolio</a>
 		        </li>
 		        <li>
 		          <a href="" class="nav-mobile-link" @click.prevent="to('/blog')">Blog</a>

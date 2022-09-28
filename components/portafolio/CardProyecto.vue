@@ -1,15 +1,17 @@
 <template>
   <article class="card-proyecto">
-    <section
-      class="card-proyecto__imagen"
-      v-bind:style="{ backgroundImage: 'url(' + item.imagen + ')' }"
-    ></section>
+    <nuxt-link
+      :to="{name: 'proyectos-slug', params: {slug: item.slug}}"
+      class="card-proyecto__imagen d-block"
+      v-bind:style="{ backgroundImage: 'url(' + item.image.url + ')' }"
+      v-if="item.image"
+    ></nuxt-link>
 
     <section class="px-4 py-4 bg-white">
-      <h3 class="card-proyecto__titulo text-primary my-0">{{ item.nombre }}</h3>
+      <nuxt-link :to="{name: 'proyectos-slug', params: {slug: item.slug}}" class="card-proyecto__titulo text-decoration-none my-0">{{ item.title }}</nuxt-link>
 
-      <p class="my-2">
-        {{ item.descripcion }}
+      <p class="my-0">
+        {{ item.summary }}
       </p>
 
       <div class="mt-4 pb-3">
@@ -63,9 +65,16 @@ export default {
 
   &__titulo {
     font-size: 1em;
+    font-weight: 700;
+    color: $app-dark;
 
     @media (min-width: 768px) {
       font-size: 1.2em;
+    }
+
+
+    &:hover {
+      color: $app-dark;
     }
   }
 

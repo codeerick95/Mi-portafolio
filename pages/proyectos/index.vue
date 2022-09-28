@@ -57,37 +57,24 @@
 
     <!-- Proyectos -->
     <div id="proyectos" class="proyectos container mt-5">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-12">
           <mensaje-rapido titulo="Proyectos realizados">
             <template slot="descripcion">
               <p>
                 En este último año he trabajado en proyectos como Freelance para
-                la agencia <a href="https://www.softaki.com" target="_blank">SOFTAKI</a>
+                distintas agencias
               </p>
-              <p>
-                LLegando a ser parte de desarrollos importantes como:
-              </p>
-
-              <ul class="list-unstyled mt-3">
-                <li>
-                  <a href="https://www.gacetajuridica.com.pe">https://www.gacetajuridica.com.pe</a>
-                </li>
-                <li>
-                  <a href="https://jaamsaonline.com.pe">https://jaamsaonline.com.pe</a>
-                </li>
-                <p>Entre otros...</p>
-              </ul>
             </template>
           </mensaje-rapido>
         </div>
-      </div>
+      </div> -->
 
       <div class="proyectos__lista row">
         <div
           class="col-md-6 px-5"
           :class="{ 'portafolio__mb-6': index % 2 != 0 }"
-          v-for="(item, index) in proyectos"
+          v-for="(item, index) in items"
           :key="index"
         >
           <card-proyecto :item="item"></card-proyecto>
@@ -107,10 +94,12 @@ import CardProyecto from "@/components/portafolio/CardProyecto";
 export default {
   data() {
     return {
-      proyectos,
+      items: []
     };
   },
-  mounted() {},
+  mounted() {
+    this.getItems()
+  },
   components: {
     CardProyecto,
   },
@@ -125,6 +114,10 @@ export default {
         offset: -150,
       });
     },
+    async getItems() {
+      let response = await this.$axios.get('/public/projects')
+      this.items = response.data.docs
+    }
   },
 };
 </script>

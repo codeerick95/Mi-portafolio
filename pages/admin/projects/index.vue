@@ -6,7 +6,7 @@
       <h1 class="title">Proyectos</h1>
 
       <router-link
-        :to="{ name: 'admin-projects-create' }"
+        :to="{ name: 'admin-projects-form' }"
         type="button"
         class="btn btn-info"
       >
@@ -30,20 +30,28 @@
           Filtrar
         </button>
 
-        <form @submit.prevent="search()" class="form-search my-0 py-0">
-          <div
-            class="form-group mb-0 d-flex justify-content-end d-flex align-items-center h-100"
-          >
-            <input
-              type="search"
-              placeholder="Buscar por nombre producto"
-              class="form-control search-field"
-              v-model="query"
-            />
-
-            <button class="btn btn-info py-2 ml-2">Buscar</button>
+        <section class="d-flex align-items-center">
+          <div class="mr-3">
+            <button type="button" class="table-header-option" @click="getItems()">
+              <i class="fas fa-sync-alt"></i>
+            </button>
           </div>
-        </form>
+
+          <form @submit.prevent="search()" class="form-search my-0 py-0">
+            <div
+              class="form-group mb-0 d-flex justify-content-end d-flex align-items-center h-100"
+            >
+              <input
+                type="search"
+                placeholder="Buscar por nombre producto"
+                class="form-control search-field"
+                v-model="query"
+              />
+
+              <button class="btn btn-info py-2 ml-2">Buscar</button>
+            </div>
+          </form>
+        </section>
       </div>
 
       <div class="table-container table-responsive">
@@ -82,7 +90,9 @@
                 >
                 </b-form-checkbox> -->
 
-                <span class="badge" :class="`badge-${getStatus(item).color}`">{{ item.status }}</span>
+                <span class="badge" :class="`badge-${getStatus(item).color}`">{{
+                  item.status
+                }}</span>
               </td>
               <td class="cell text text-uppercase text-center">
                 <!-- <b-form-checkbox
@@ -118,7 +128,7 @@
                     href="#"
                     @click.prevent="
                       $router.push({
-                        name: 'ProductsUpdate',
+                        name: 'admin-projects-form',
                         params: { slug: item.slug },
                       })
                     "
@@ -237,14 +247,14 @@ export default {
       query: "",
       projectStatus: [
         {
-          key: 'ACTIVATED',
-          color: 'success'
+          key: "ACTIVATED",
+          color: "success",
         },
         {
-          key: 'DEACTIVATED',
-          color: 'danger'
-        }
-      ]
+          key: "DEACTIVATED",
+          color: "danger",
+        },
+      ],
     };
   },
   mounted() {
@@ -262,8 +272,8 @@ export default {
       this.loading = false;
     },
     getStatus(object) {
-      return this.projectStatus.find(item => item.key === object.status)
-    }
+      return this.projectStatus.find((item) => item.key === object.status);
+    },
   },
   computed: {
     ...mapGetters({
