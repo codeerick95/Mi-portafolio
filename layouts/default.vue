@@ -6,7 +6,9 @@
 
     <!--  <header-provisional></header-provisional>  -->
 
-    <Nuxt />
+    <main class="pb-5">
+      <Nuxt />
+    </main>
 
     <NavRedesMobile />
   </div>

@@ -14,7 +14,7 @@
         {{ item.summary }}
       </p>
 
-      <div class="mt-4 pb-3">
+      <div class="d-flex justify-content-end mt-4">
         <!-- <a
           :href="item.url"
           class="
@@ -31,9 +31,11 @@
           >Detalles</a
         > -->
 
+        <nuxt-link :to="{name: 'proyectos-slug', params: {slug: item.slug}}" class="btn btn-primary mr-3">Ver detalles</nuxt-link>
+
         <a
           :href="item.url"
-          class="btn btn-dark btn-sm"
+          class="btn btn-dark"
           target="_blank"
           >
             Visitar web
@@ -55,11 +57,11 @@ export default {
 
 <style lang="scss">
 .card-proyecto {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
   &__imagen {
     height: 270px;
-
     background-size: cover;
-
     border-radius: 0.2rem;
   }
 
@@ -69,7 +71,7 @@ export default {
     color: $app-dark;
 
     @media (min-width: 768px) {
-      font-size: 1.2em;
+      font-size: 1.4em;
     }
 
 

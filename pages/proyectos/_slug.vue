@@ -7,27 +7,39 @@
             <div class="d-flex justify-content-between align-items-center">
               <h1 class="font-weight-bold">{{ item.title }}</h1>
 
-              <a :href="item.url" target="_blank" class="btn btn-primary">Visitar sitio web</a>
+              <a :href="item.url" target="_blank" class="btn btn-primary"
+                >Visitar sitio web</a
+              >
             </div>
 
             <!-- <pre>
               {{ item }}
             </pre> -->
 
-            <p class="text-muted">
-              {{ item.summary }}
-            </p>
-
-            <div class="mt-5" v-html="item.description"></div>
-
             <section class="mt-5">
-              <h2 class="font-weight-bold mb-3">Galería</h2>
+              <p class="text-muted">
+                {{ item.summary }}
+              </p>
 
-              <div class="row">
-                <div class="col-md-4" v-for="image in item.images" :key="image.id">
-                  <img :src="image.url" :alt="image.description" class="img-fluid">
+              <div class="mt-5" v-html="item.description"></div>
+
+              <section class="mt-5">
+                <h2 class="font-weight-bold mb-3">Galería</h2>
+
+                <div class="row">
+                  <div
+                    class="col-md-4"
+                    v-for="image in item.images"
+                    :key="image.id"
+                  >
+                    <img
+                      :src="image.url"
+                      :alt="image.description"
+                      class="img-fluid"
+                    />
+                  </div>
                 </div>
-              </div>
+              </section>
             </section>
           </div>
         </article>
@@ -50,7 +62,7 @@ export default {
     );
 
     return {
-      item: response.data.item,
+      item: response.data.payload,
     };
   },
 };

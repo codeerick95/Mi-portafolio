@@ -70,6 +70,16 @@
         </div>
       </div> -->
 
+      <div class="row">
+        <div class="col-12">
+          <p>
+              Otros proyectos en los que he trabajado han sido como <b>Freelance</b> por encargo de
+              agencias, por lo que en esta web solo muestro mis proyectos
+              personales.
+            </p>
+        </div>
+      </div>
+
       <div class="proyectos__lista row">
         <div
           class="col-md-6 px-5"
@@ -94,11 +104,11 @@ import CardProyecto from "@/components/portafolio/CardProyecto";
 export default {
   data() {
     return {
-      items: []
+      items: [],
     };
   },
   mounted() {
-    this.getItems()
+    this.getItems();
   },
   components: {
     CardProyecto,
@@ -115,9 +125,9 @@ export default {
       });
     },
     async getItems() {
-      let response = await this.$axios.get('/public/projects')
-      this.items = response.data.docs
-    }
+      let response = await this.$axios.get("/public/projects");
+      this.items = response.data.docs;
+    },
   },
 };
 </script>
@@ -164,7 +174,7 @@ export default {
   }
 
   p {
-    font-size: .95em;
+    font-size: 0.95em;
   }
 }
 </style>

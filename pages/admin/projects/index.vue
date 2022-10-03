@@ -6,7 +6,7 @@
       <h1 class="title">Proyectos</h1>
 
       <router-link
-        :to="{ name: 'admin-projects-form' }"
+        :to="{ name: 'admin-projects-create' }"
         type="button"
         class="btn btn-info"
       >
@@ -32,7 +32,11 @@
 
         <section class="d-flex align-items-center">
           <div class="mr-3">
-            <button type="button" class="table-header-option" @click="getItems()">
+            <button
+              type="button"
+              class="table-header-option"
+              @click="getItems()"
+            >
               <i class="fas fa-sync-alt"></i>
             </button>
           </div>
@@ -67,7 +71,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item, index) in items" :key="item.id">
+            <tr v-for="(item, index) in items" :key="index">
               <td class="cell">
                 <!-- <img
                   :src="item.foto_real.url"
@@ -128,7 +132,7 @@
                     href="#"
                     @click.prevent="
                       $router.push({
-                        name: 'admin-projects-form',
+                        name: 'admin-projects-edit-slug',
                         params: { slug: item.slug },
                       })
                     "
@@ -136,7 +140,7 @@
                   >
                   <b-dropdown-item
                     href="#"
-                    @click.prevent="deleteItem(item.id, index)"
+                    @click.prevent="openModalDelete(item._id, index)"
                     >Eliminar</b-dropdown-item
                   >
                 </b-dropdown>
@@ -268,11 +272,49 @@ export default {
       let response = await this.$axios.get("/projects");
 
       this.pagination.total = response.data.total;
-      this.items = response.data.docs;
+      this.items = [...response.data.docs];
       this.loading = false;
     },
     getStatus(object) {
       return this.projectStatus.find((item) => item.key === object.status);
+    },
+    openModalDelete(id, index) {
+      this.$swal
+        .fire({
+          title: "Está seguro de eliminar",
+          text: "El elemento no podrá ser recuperado",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "¡Sí, borrar!",
+          cancelButtonText: "No, cancelar!",
+          reverseButtons: true,
+        })
+        .then(async (result) => {
+          if (result.isConfirmed) {
+            await this.deleteItem(id, index);
+          }
+        });
+    },
+    async deleteItem(id, index) {
+      try {
+        console.log(id)
+        console.log(index)
+
+        await this.$axios.delete(`/projects/${id}`);
+
+        this.items.splice(index, 1);
+        console.log(this.items)
+
+        // this.getItems();
+
+        this.$toast.success("Elemento eliminado", {
+          position: "top-right",
+          duration: 2000,
+        });
+      } catch (error) {
+        console.log("Error");
+        console.log(error);
+      }
     },
   },
   computed: {
