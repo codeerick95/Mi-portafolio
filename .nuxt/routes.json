@@ -1,0 +1,128 @@
+[
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\admin\\\\index.vue",
+    "chunkName": "pages/admin/index",
+    "_name": "_111471c8"
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\blog\\\\index.vue",
+    "chunkName": "pages/blog/index",
+    "_name": "_04c42307"
+  },
+  {
+    "name": "contacto",
+    "path": "/contacto",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\contacto.vue",
+    "chunkName": "pages/contacto",
+    "_name": "_0d7f86c8"
+  },
+  {
+    "name": "cv",
+    "path": "/cv",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\cv.vue",
+    "chunkName": "pages/cv",
+    "_name": "_edd444a8"
+  },
+  {
+    "name": "cv-anterior",
+    "path": "/cv-anterior",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\cv-anterior.vue",
+    "chunkName": "pages/cv-anterior",
+    "_name": "_4bfd1569"
+  },
+  {
+    "name": "practicas",
+    "path": "/practicas",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\practicas.vue",
+    "chunkName": "pages/practicas",
+    "_name": "_32edb91a"
+  },
+  {
+    "name": "proyectos",
+    "path": "/proyectos",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\proyectos\\\\index.vue",
+    "chunkName": "pages/proyectos/index",
+    "_name": "_39baac7d"
+  },
+  {
+    "name": "template-base",
+    "path": "/template-base",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\template-base.vue",
+    "chunkName": "pages/template-base",
+    "_name": "_21e0ca1b"
+  },
+  {
+    "name": "admin-blog",
+    "path": "/admin/blog",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\admin\\\\blog\\\\index.vue",
+    "chunkName": "pages/admin/blog/index",
+    "_name": "_5eedf53a"
+  },
+  {
+    "name": "admin-login",
+    "path": "/admin/login",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\admin\\\\login.vue",
+    "chunkName": "pages/admin/login",
+    "_name": "_7dc52b9a"
+  },
+  {
+    "name": "admin-projects",
+    "path": "/admin/projects",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\admin\\\\projects\\\\index.vue",
+    "chunkName": "pages/admin/projects/index",
+    "_name": "_13a2ac62"
+  },
+  {
+    "name": "admin-suscriptores",
+    "path": "/admin/suscriptores",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\admin\\\\suscriptores\\\\index.vue",
+    "chunkName": "pages/admin/suscriptores/index",
+    "_name": "_b83af744"
+  },
+  {
+    "name": "blog-captura-de-pantalla-con-javascript",
+    "path": "/blog/captura-de-pantalla-con-javascript",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\blog\\\\captura-de-pantalla-con-javascript.vue",
+    "chunkName": "pages/blog/captura-de-pantalla-con-javascript",
+    "_name": "_3a96f508"
+  },
+  {
+    "name": "admin-blog-crear",
+    "path": "/admin/blog/crear",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\admin\\\\blog\\\\crear.vue",
+    "chunkName": "pages/admin/blog/crear",
+    "_name": "_9ad34b22"
+  },
+  {
+    "name": "admin-projects-create",
+    "path": "/admin/projects/create",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\admin\\\\projects\\\\create.vue",
+    "chunkName": "pages/admin/projects/create",
+    "_name": "_ef31aac8"
+  },
+  {
+    "name": "admin-projects-edit-slug",
+    "path": "/admin/projects/edit/:slug?",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\admin\\\\projects\\\\edit\\\\_slug.vue",
+    "chunkName": "pages/admin/projects/edit/_slug",
+    "_name": "_44204560"
+  },
+  {
+    "name": "proyectos-slug",
+    "path": "/proyectos/:slug",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\proyectos\\\\_slug.vue",
+    "chunkName": "pages/proyectos/_slug",
+    "_name": "_38040b35"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\projects\\\\erick\\\\web-personal\\\\Mi-portafolio\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_0dc192a9"
+  }
+]
