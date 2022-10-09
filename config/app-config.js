@@ -1,7 +1,7 @@
 const config = {
     api: {
         // url: 'http://localhost:3000',
-        url: 'http://157.230.209.105:3000',
+        url: 'http://api.erickhl.com',
         urlDev: 'http://localhost:3000/'
     }
 }
