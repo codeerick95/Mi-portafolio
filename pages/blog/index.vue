@@ -32,6 +32,7 @@
                   Illustration by
                   <a
                     href="https://icons8.com/illustrations/author/5fe0d309487a404a84cd3917"
+                    target="_blank"
                     >Lazarus_al</a
                   >
                   from <a href="https://icons8.com/illustrations">Ouch!</a>

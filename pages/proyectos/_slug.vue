@@ -1,5 +1,5 @@
 <template>
-  <section class="container mt-5">
+  <section class="container mt-5" v-if="item">
     <div class="row">
       <div class="col-11">
         <article class="card border-0 main-shadow">
@@ -57,13 +57,22 @@ export default {
     };
   },
   async asyncData(context) {
-    let response = await context.$axios.get(
-      `/public/projects/${context.params.slug}`
-    );
+    try {
+      let response = await context.$axios.get(
+        `/public/projects/${context.params.slug}`
+      );
 
-    return {
-      item: response.data.payload,
-    };
+      if (!response.data.payload) {
+        return context.error({ statusCode: 404 });
+      }
+
+      return {
+        item: response.data.payload,
+      };
+    } catch (error) {
+      console.log("Error project slug");
+      console.log(error.message);
+    }
   },
 };
 </script>

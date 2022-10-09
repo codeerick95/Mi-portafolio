@@ -1,5 +1,7 @@
 <template>
   <div class="main-layout">
+    <BackButton />
+
     <HeaderMobile />
 
     <header-app v-if="$route.name != 'cv'"></header-app>
@@ -18,6 +20,7 @@
 import HeaderApp from '@/components/global/HeaderApp'
 import HeaderMobile from '@/components/global/HeaderMobile'
 import NavRedesMobile from '@/components/global/NavRedesMobile'
+import BackButton from '@/components/global/BackButton'
 
 // import { db } from '@/plugins/firebase.js'
 
@@ -25,7 +28,8 @@ export default {
   components: {
     HeaderApp,
     HeaderMobile,
-    NavRedesMobile
+    NavRedesMobile,
+    BackButton
   },
   mounted() {
   }
