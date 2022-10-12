@@ -154,7 +154,7 @@ export default {
 .admin-nav {
   &-item {
     background-color: rgba(115, 102, 255, 0.06);
-    color: rgba($app-dark, 0.85);
+    color: rgba($dark, 0.85);
     padding: 0.65rem .5rem;
     border-radius: 9px;
     box-shadow: 0px 0px 5px -1px rgba($admin-primary, 0.3) !important;

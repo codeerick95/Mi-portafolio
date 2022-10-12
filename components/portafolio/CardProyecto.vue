@@ -68,7 +68,7 @@ export default {
   &__titulo {
     font-size: 1em;
     font-weight: 700;
-    color: $app-dark;
+    color: $dark;
 
     @media (min-width: 768px) {
       font-size: 1.4em;
@@ -76,12 +76,12 @@ export default {
 
 
     &:hover {
-      color: $app-dark;
+      color: $dark;
     }
   }
 
   &__btn {
-    background-color: $app-primary;
+    background-color: $primary;
 
     font-size: 0.9em;
     color: white;
@@ -89,7 +89,7 @@ export default {
     width: 110px;
     height: 30px;
 
-    border: 1px solid $app-primary;
+    border: 1px solid $primary;
     border-radius: 0;
 
     z-index: 100 !important;
@@ -115,7 +115,7 @@ export default {
       bottom: -0.4rem;
       z-index: 10;
 
-      border: 1px solid $app-primary;
+      border: 1px solid $primary;
     }
 
     @media (min-width: 768px) {

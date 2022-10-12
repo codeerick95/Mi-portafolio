@@ -56,7 +56,7 @@
 	width: 100%;
 	height: 93vh;
 
-	border-top: 10px solid $app-primary;
+	border-top: 10px solid $primary;
 
 	position: fixed;
 	top: 0;
@@ -64,7 +64,7 @@
 
 	&-link {
 		font-size: 1.5em;
-		color: $app-dark;
+		color: $dark;
 
 		display: inline-block;
 

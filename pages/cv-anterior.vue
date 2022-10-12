@@ -219,7 +219,7 @@ export default {};
 
   section {
     grid-column: 2 / 3;
-    border-right: 1px solid rgba($app-dark, 0.3);
+    border-right: 1px solid rgba($dark, 0.3);
   }
 
   .line {

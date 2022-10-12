@@ -1,12 +1,18 @@
+@import './variables';
+
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-vue/src/index';
+
 @import "./utils";
 @import "./librerias/prism";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+@import "./reset";
 @import "./layouts/admin-layout";
 
 .main-layout {
-  // background-color: $app-dark;
+  // background-color: $dark;
 
   font-family: 'Roboto', sans-serif !important;
 
@@ -15,6 +21,7 @@
 
 body {
   background-color: $light;
+  color: $dark;
 }
 
 h1,
@@ -59,11 +66,6 @@ textarea {
   font-size: .8rem;
 }
 
-.btn {
-  border-radius: 0.1rem;
-  box-shadow: none !important;
-}
-
 .btn--main {
   background-color: rgba($success, .8);
   padding: 0.7rem 1.5rem;
@@ -78,36 +80,36 @@ textarea {
   }
 }
 
-.btn-primary {
-  background-color: rgba($app-primary, 0.9);
-  border-color: $app-primary;
+// .btn-primary {
+//   background-color: rgba($primary, 0.9);
+//   border-color: $primary;
 
-  box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
-  -webkit-box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
-  -moz-box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
+//   box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
+//   -webkit-box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
+//   -moz-box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
 
-  transition: transform 0.5s;
+//   transition: transform 0.5s;
 
-  &:hover,
-  &:active,
-  &:visited {
-    background-color: $app-primary !important;
-    border-color: $app-primary !important;
+//   &:hover,
+//   &:active,
+//   &:visited {
+//     background-color: $primary !important;
+//     border-color: $primary !important;
 
-    color: white !important;
+//     color: white !important;
 
-    box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
-    -webkit-box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
-    -moz-box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
-  }
+//     box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
+//     -webkit-box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
+//     -moz-box-shadow: 11px 11px 12px -8px rgba(0, 197, 142, 0.18) !important;
+//   }
 
-  &:hover {
-    transform: translateY(-0.15rem);
-  }
-}
+//   &:hover {
+//     transform: translateY(-0.15rem);
+//   }
+// }
 
 .text-primary {
-  color: $app-primary !important;
+  color: $primary !important;
 }
 
 .font-weight-200 {

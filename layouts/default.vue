@@ -1,5 +1,5 @@
 <template>
-  <div class="main-layout">
+  <div class="main-layout" :class="{'main-layout-dark': getAppDark}">
     <BackButton />
 
     <HeaderMobile />
@@ -13,14 +13,19 @@
     </main>
 
     <NavRedesMobile />
+
+    <SwitchAppStyleMode />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import HeaderApp from '@/components/global/HeaderApp'
 import HeaderMobile from '@/components/global/HeaderMobile'
 import NavRedesMobile from '@/components/global/NavRedesMobile'
 import BackButton from '@/components/global/BackButton'
+import SwitchAppStyleMode from '@/components/global/SwitchAppStyleMode'
 
 // import { db } from '@/plugins/firebase.js'
 
@@ -29,9 +34,15 @@ export default {
     HeaderApp,
     HeaderMobile,
     NavRedesMobile,
-    BackButton
+    BackButton,
+    SwitchAppStyleMode
   },
   mounted() {
+  },
+  computed: {
+    ...mapGetters({
+      getAppDark: 'getAppDark'
+    })
   }
 }
 </script>
@@ -42,6 +53,10 @@ export default {
 
   @media (min-width: 992px) {
     padding-bottom: 0;
+  }
+
+  &-dark {
+    background-color: $dark !important;
   }
 }
 </style>

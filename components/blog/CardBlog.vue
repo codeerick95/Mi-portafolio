@@ -60,7 +60,7 @@ export default {
     width: 100%;
     height: 100%;
 
-    background-color: rgba($app-dark, 0.6);
+    background-color: rgba($dark, 0.6);
 
     position: absolute;
     top: 0;
@@ -69,15 +69,15 @@ export default {
     transition: background-color 0.7s;
 
     &:hover {
-      background-color: rgba($app-dark, 0.4);
+      background-color: rgba($dark, 0.4);
     }
   }
 
   &__tag {
-    color: rgba($app-primary, 0.85);
+    color: rgba($primary, 0.85);
 
     &:hover {
-      color: $app-primary;
+      color: $primary;
     }
   }
 }

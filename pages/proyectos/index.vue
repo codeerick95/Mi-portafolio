@@ -1,7 +1,7 @@
 <template>
   <div class="portafolio animate__animated animate__fadeIn">
     <section class="banner">
-      <div class="container h-100 mt-5">
+      <div class="container h-100 pt-5">
         <div class="row h-100">
           <div class="col-12 h-100 d-flex flex-column justify-content-center">
             <div>
@@ -56,7 +56,7 @@
     </section>
 
     <!-- Proyectos -->
-    <div id="proyectos" class="proyectos container mt-5">
+    <div id="proyectos" class="proyectos container">
       <!-- <div class="row">
         <div class="col-12">
           <mensaje-rapido titulo="Proyectos realizados">
@@ -95,10 +95,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
-import { proyectos } from "@/data/proyectos";
-
 import CardProyecto from "@/components/portafolio/CardProyecto";
 
 export default {
@@ -121,7 +117,7 @@ export default {
         scrollTo: elemento,
         updateHistory: false,
         duration: 700,
-        offset: -150,
+        offset: -50
       });
     },
     async getItems() {

@@ -29,7 +29,8 @@ export const state = () => ({
 		}
 	],
 	cart: [],
-	productoSeleccionado: null
+	productoSeleccionado: null,
+	appDark: false
 })
 
 export const mutations = {
@@ -73,6 +74,9 @@ export const mutations = {
 		let productoAModificar = state.products[index]
 
 		productoAModificar.name = value
+	},
+	SET_DARK_MODE(state, value) {
+		state.appDark = value
 	}
 }
 
@@ -152,5 +156,8 @@ export const getters = {
 
 			return producto.stock <= 1
 		}
+	},
+	getAppDark(state) {
+		return state.appDark
 	}
 }

@@ -8,6 +8,7 @@
 	import { mapState } from 'vuex'
 
 	export default {
+		middleware: "auth",
 		layout: 'admin',
 		data() {
 			return {

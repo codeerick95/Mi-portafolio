@@ -1,20 +1,13 @@
 <template>
-  <div class="index">
+  <div class="index" :class="{ 'index-dark': getAppDark }">
     <!-- Banner -->
     <section class="banner px-3">
       <div class="container h-100">
         <div class="row h-100">
-          <div
-            class="col-12 h-100 d-flex flex-column justify-content-center"
-          >
+          <div class="col-12 h-100 d-flex flex-column justify-content-center px-0">
             <div>
               <h2
-                class="
-                  text-primary
-                  banner__sub
-                  my-0
-                  animate__animated animate__fadeIn
-                "
+                class="text-primary-dark banner__sub my-0 animate__animated animate__fadeIn"
               >
                 Hola, mi nombre es
               </h2>
@@ -31,12 +24,15 @@
                   class="banner__description animate__animated animate__fadeIn"
                 >
                   Desarrollador web (Frontend) ubicado en Lima, Perú.
-                  <br>
-                  Me especializo en la maquetación e interacción de aplicaciones web.
+                  <br />
+                  Me especializo en la maquetación e interacción de aplicaciones
+                  web.
                 </p>
 
-                <div class="text-right mt-4 mr-lg-3">
-                  <a href="" class="btn btn--main text-uppercase" @click.prevent="contacto()">Contáctame</a>
+                <div class="text-right mt-4 mr-lg-5">
+                  <a href="" class="btn btn-primary" @click.prevent="contacto()"
+                    >Contáctame</a
+                  >
                 </div>
               </div>
 
@@ -49,49 +45,25 @@
                   <img
                     src="/logos/vuejs.svg"
                     alt="Logo Vue js"
-                    class="
-                      logo-small
-                      animate__animated animate__pulse animate__infinite
-                      infinite
-                      animate__slower
-                    "
+                    class="logo-small animate__animated animate__pulse animate__infinite infinite animate__slower"
                   />
 
                   <img
                     src="/logos/javascript.svg"
                     alt="Logo Javascript"
-                    class="
-                      logo-small
-                      animate__animated animate__pulse animate__infinite
-                      infinite
-                      animate__slower
-                      mb-4
-                      mx-2
-                    "
+                    class="logo-small animate__animated animate__pulse animate__infinite infinite animate__slower mb-4 mx-2"
                   />
 
                   <img
                     src="/logos/css.svg"
                     alt="Logo Javascript"
-                    class="
-                      logo-small
-                      animate__animated animate__pulse animate__infinite
-                      infinite
-                      animate__slower
-                      mt-4
-                    "
+                    class="logo-small animate__animated animate__pulse animate__infinite infinite animate__slower mt-4"
                   />
 
                   <img
                     src="/logos/html.svg"
                     alt="Logo Javascript"
-                    class="
-                      logo-small
-                      animate__animated animate__pulse animate__infinite
-                      infinite
-                      animate__slower
-                      mx-2
-                    "
+                    class="logo-small animate__animated animate__pulse animate__infinite infinite animate__slower mx-2"
                   />
 
                   <div class="d-flex justify-content-end">
@@ -103,13 +75,7 @@
                     <img
                       src="/logos/nuxt-2.svg"
                       alt="Logo Javascript"
-                      class="
-                        img-fluid
-                        logo-nuxt
-                        animate__animated animate__pulse animate__infinite
-                        infinite
-                        animate__slower
-                      "
+                      class="img-fluid logo-nuxt animate__animated animate__pulse animate__infinite infinite animate__slower"
                     />
                   </div>
                 </div>
@@ -139,11 +105,12 @@
             </i>
           </p>
 
-          <p class="mt-3">
+          <p class="mt-1">
             Hace aproximadamente 3 años descubrí la programación por simple
-            curiosidad. Con el tiempo aprendí a escribir mis primeras líneas de
-            código y desde entonces no he parado de aprender sobre programación
-            y tecnología en general.
+            curiosidad. <br />
+            Con el tiempo aprendí a escribir mis primeras líneas de código y
+            desde entonces no he parado de aprender sobre programación y
+            tecnología en general.
           </p>
 
           <p>
@@ -152,7 +119,10 @@
           </p>
 
           <div class="mt-4">
-            <nuxt-link to="/cv" class="btn btn-success">Mostrar CV <i class="fas fa-location-arrow"></i></nuxt-link>
+            <nuxt-link to="/cv" class="btn btn-primary"
+              >Mostrar CV
+              <span class="ml-2"><i class="fas fa-file-alt"></i></span
+            ></nuxt-link>
           </div>
 
           <h3 class="index__sub font-weight-bold mt-5">
@@ -161,13 +131,7 @@
 
           <div class="index__logos">
             <div
-              class="
-                row
-                justify-content-center
-                align-items-center
-                text-center
-                mt-3
-              "
+              class="row justify-content-center align-items-center text-center mt-3"
             >
               <div
                 class="col-5 col-md-2"
@@ -198,36 +162,48 @@
 
           <section id="contacto" class="contact mt-5">
             <div class="container">
-              <div class="row">
+              <div class="row justify-content-center">
                 <div class="col-12">
                   <mensaje-rapido
                     titulo="Pongámonos en contacto"
                     emoji="/imagenes/smiling.svg"
                   >
                     <template slot="descripcion">
-                      <p class="font-weight-200 my-0">
-                        Puedes hacerlo directamente
-                      </p>
+                      <div
+                        class="d-flex flex-column justify-content-center align-items-center"
+                      >
+                        <p class="font-weight-200 my-0">
+                          Puedes hacerlo directamente
+                        </p>
 
-                      <ul class="list-unstyled mt-2">
-                        <li>
-                          <p class="font-weight-200 my-0">
-                            <i class="far fa-envelope"></i>
-                            <span class="font-weight-400 d-inline-block px-1"
-                              >dev.erick95@gmail.com</span
+                        <ul class="list-unstyled mt-2">
+                          <li>
+                            <button
+                              type="button"
+                              class="contact-button-item"
+                              @click="copy('dev.erick95@gmail.com')"
                             >
-                          </p>
-                        </li>
+                              <i class="far fa-envelope"></i>
+                              <span class="font-weight-400 d-inline-block px-1"
+                                >dev.erick95@gmail.com</span
+                              >
+                            </button>
+                          </li>
 
-                        <li>
-                          <p class="font-weight-200 my-2">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span class="font-weight-400 d-inline-block px-1"
-                              >+51 923 417 407</span
+                          <li>
+                            <button
+                              type="button"
+                              class="contact-button-item mt-3"
+                              @click="copy('+51 923 417 407')"
                             >
-                          </p>
-                        </li>
-                      </ul>
+                              <i class="fas fa-mobile-alt"></i>
+                              <span class="font-weight-400 d-inline-block px-1"
+                                >+51 923 417 407</span
+                              >
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
                     </template>
                   </mensaje-rapido>
                 </div>
@@ -238,13 +214,7 @@
                       O quizá quieras conocer
                       <nuxt-link
                         to="/proyectos"
-                        class="
-                          text-dark
-                          font-weight-bold
-                          text-decoration-none
-                          d-inline-block
-                          border-bottom
-                        "
+                        class="text-dark font-weight-bold text-decoration-none d-inline-block border-bottom"
                         >mis proyectos</nuxt-link
                       >
                     </p>
@@ -316,22 +286,32 @@ export default {
   computed: {
     ...mapState(["items"]),
     ...mapGetters({
-      currentUser: 'currentUser'
-    })
+      currentUser: "currentUser",
+      getAppDark: "getAppDark",
+    }),
   },
   methods: {
     contacto() {
-      const myEl = document.getElementById('contacto')
+      const myEl = document.getElementById("contacto");
 
       this.$smoothScroll({
         scrollTo: myEl,
-        updateHistory: false
-      })
+        updateHistory: false,
+      });
     },
     async logout() {
       await this.$auth.logout();
-    }
-  }
+    },
+    async copy(text) {
+      await navigator.clipboard.writeText(text);
+
+      this.$toast.success("Texto copiado al portapales <span class='ml-3'><i class='fas fa-copy'></i></span>", {
+        theme: "bubble",
+        position: "bottom-right",
+        duration: 2000,
+      });
+    },
+  },
 };
 </script>
 
@@ -367,13 +347,12 @@ export default {
   }
 
   &__title {
-    color: $app-dark;
     font-size: 3.5em;
     font-weight: 700;
   }
 
   &__description {
-    font-size: .95em;
+    font-size: 0.95em;
   }
 
   &__col {
@@ -397,6 +376,26 @@ export default {
 }
 
 .contact {
-  padding: 3rem 0 5rem 0;
+  padding: 3rem 0 2rem 0;
+
+  .contact-button-item {
+    width: 100%;
+    font-size: 14px;
+    border: 2px dashed rgba($dark, 0.1);
+    padding: 0.5rem 1rem;
+
+    @media (min-width: 768px) {
+      width: 250px;
+      font-size: 16px;
+    }
+  }
+}
+
+.index-dark {
+  color: white;
+
+  .banner__title {
+    color: white;
+  }
 }
 </style>

@@ -39,7 +39,7 @@
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 
-	border-top: 1px solid rgba($app-dark, .3);
+	border-top: 1px solid rgba($dark, .3);
 
 	position: fixed;
 	bottom: 0;

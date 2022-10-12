@@ -1,0 +1,28 @@
+.btn {
+    font-size: 16px;
+    font-weight: 500 !important;
+    text-align: center !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    
+    transition: transform .3s;
+
+    &:hover {
+        transform: translateY(-0.05rem);
+    }
+
+    &-primary {
+        color: white;
+
+        &:hover {
+            background-color: $primary-dark;
+        }
+    }
+}
+
+.container {
+    @media (max-width: 576px) {
+        max-width: 90%;
+    }
+}

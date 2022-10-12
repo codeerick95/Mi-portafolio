@@ -193,7 +193,7 @@ export default {
 
 .categorias-blog {
   &__item {
-    background-color: rgba($primary2, 0.1);
+    background-color: rgba($dark, 0.1);
 
     border-bottom: 1px solid rgba(white, 0.02);
     border-radius: 0.1rem;
@@ -201,7 +201,7 @@ export default {
     transition: background-color 0.5s;
 
     &:hover {
-      background-color: rgba($primary2, 0.5);
+      background-color: rgba($dark, 0.5);
     }
   }
 
@@ -220,7 +220,7 @@ export default {
     height: 50px;
 
     padding-left: 1rem;
-    border: 2px solid rgba($app-dark, 0.6);
+    border: 2px solid rgba($dark, 0.6);
     border-radius: 1.5rem;
 
     box-shadow: none !important;
@@ -228,14 +228,14 @@ export default {
     transition: border 0.5s;
 
     &:focus {
-      border: 2px solid rgba($app-dark, 0.8);
+      border: 2px solid rgba($dark, 0.8);
     }
   }
 
   &__btn {
     height: 35px;
 
-    background-color: $app-primary;
+    background-color: $primary;
 
     letter-spacing: 0.1rem;
 

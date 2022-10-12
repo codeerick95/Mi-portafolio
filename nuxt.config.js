@@ -120,6 +120,10 @@ export default {
     'vue-sweetalert2/nuxt',
     '@nuxtjs/toast'
   ],
+  bootstrapVue: {
+    bootstrapCSS: false,
+    bootstrapVueCSS: false
+  },
   styleResources: {
     scss: ["./assets/scss/_variables.scss"],
   },

@@ -1,5 +1,5 @@
 <template>
-  <section class="blog-slug container mt-5">
+  <section class="blog-slug">
     <div class="row">
       <div class="col-md-10">
         <div class="card border-0">

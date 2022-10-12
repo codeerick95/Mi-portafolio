@@ -84,6 +84,11 @@
       </div>
 
       <div class="form-group">
+        <label for="tags-basic">Type a new tag and press enter</label>
+        <b-form-tags input-id="tags-basic" v-model="form.tags" placeholder="Etiquetas relacionadas al proyecto" tag-pills tag-variant="primary"></b-form-tags>
+      </div>
+
+      <div class="form-group">
         <label for="image">Imagen destacada</label>
 
         <section>
@@ -150,7 +155,9 @@
         <nuxt-link :to="{ name: 'admin-projects' }" class="text-danger mr-3"
           >Cancelar</nuxt-link
         >
-        <button type="submit" class="btn btn-primary">{{ slug ? 'Actualizar' : 'Publicar' }}</button>
+        <button type="submit" class="btn btn-primary">
+          {{ slug ? "Actualizar" : "Publicar" }}
+        </button>
       </div>
     </form>
   </section>
@@ -181,6 +188,7 @@ export default {
         url: null,
         status: null,
         level: null,
+        tags: [],
       },
       levelOptions: [
         {
@@ -232,6 +240,7 @@ export default {
       summary: { required },
       image: { required },
       level: { required },
+      tags: { required },
     },
   },
   methods: {
@@ -242,8 +251,9 @@ export default {
       try {
         this.loading = true;
 
-        let item = await await this.$axios.post("/projects", {
+        let item = await this.$axios.post("/projects", {
           ...this.form,
+          tags: this.form.tags.toString()
         });
 
         this.loading = false;

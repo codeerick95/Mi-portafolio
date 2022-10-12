@@ -1,6 +1,7 @@
 <template>
   <header
-    class="header d-none d-lg-flex flex-column justify-content-around align-items-end h-100"
+    class="header d-none d-lg-flex flex-column justify-content-between align-items-end h-100 py-4"
+    :class="{'header-dark': getAppDark, 'py-0': showNav}"
   >
     <nav
       class="main-nav animate__animated animate__fadeIn d-none d-lg-block"
@@ -133,6 +134,7 @@ export default {
   computed: {
     ...mapGetters({
       currentUser: "currentUser",
+      getAppDark: 'getAppDark'
     }),
   },
 };
@@ -146,7 +148,7 @@ export default {
 
   position: fixed;
   top: 0;
-  right: 0;
+  right: .5rem;
   // bottom: 0;
   // left: 0;
 
@@ -161,7 +163,7 @@ export default {
   &__list {
     a {
       font-size: 1.2em;
-      color: $app-dark;
+      color: $dark;
 
       text-decoration: none;
       text-transform: uppercase;
@@ -183,21 +185,21 @@ export default {
       }
 
       &:hover {
-        color: $app-dark;
+        color: $dark;
 
         &:before {
           content: "";
 
-          background-color: rgba($success, 0.2);
+          background-color: rgba($success, .1);
 
           width: 100%;
-          height: 50%;
+          height: 25%;
 
           border-bottom: 2px solid $success;
 
           position: absolute;
           left: 0;
-          bottom: 0;
+          bottom: .2rem;
         }
       }
     }
@@ -205,7 +207,7 @@ export default {
 
   &-link {
     &:hover {
-      color: $app-primary !important;
+      color: $primary !important;
     }
   }
 }
@@ -217,22 +219,20 @@ export default {
     width: 2px;
     height: 120px;
 
-    background-color: rgba($app-dark, 0.7);
+    background-color: rgba($dark, 0.7);
   }
 }
 
 .icon {
   font-size: 1.5em;
-  color: rgba($app-dark, 0.7);
+  color: rgba($dark, 0.7);
 
   display: inline-block;
-
-  margin-bottom: 0.5rem;
 
   transition: color 0.5s, transform 0.8s;
 
   &:hover {
-    color: $app-dark;
+    color: $dark;
 
     transform: scale(1.3);
   }
@@ -246,5 +246,19 @@ export default {
 .hamburger-inner:after,
 .hamburger-inner:before {
   width: 25px;
+}
+
+.header-dark {
+  a {
+    color: rgba(white, .9);
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .nav-social__line {
+    background-color: rgba(white, 0.7);
+  }
 }
 </style>

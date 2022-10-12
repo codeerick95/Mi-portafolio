@@ -1,5 +1,5 @@
 <template>
-  <section class="container mt-5" v-if="item">
+  <section class="container" v-if="item">
     <div class="row">
       <div class="col-11">
         <article class="card border-0 main-shadow">
@@ -11,10 +11,6 @@
                 >Visitar sitio web</a
               >
             </div>
-
-            <!-- <pre>
-              {{ item }}
-            </pre> -->
 
             <section class="mt-5">
               <p class="text-muted">
@@ -73,6 +69,26 @@ export default {
       console.log("Error project slug");
       console.log(error.message);
     }
+  },
+  head() {
+    console.log("Head");
+    console.log(this.item);
+
+    return {
+      title: this.item.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.item.summary,
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: this.item.tags,
+        }
+      ],
+    };
   },
 };
 </script>
