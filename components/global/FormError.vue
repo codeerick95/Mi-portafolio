@@ -3,7 +3,7 @@
       <span class="text-danger">
           <i class="fas fa-times"></i>
       </span>
-      <p class="text-muted small ml-2">{{ text }}</p>
+      <p class="text-danger small ml-2">{{ text }}</p>
   </div>
 </template>
 

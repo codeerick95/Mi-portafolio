@@ -3,6 +3,10 @@
     <AdminLoading v-if="loading" />
 
     <form action="" @submit.prevent="submit()" v-else>
+      <pre>
+      {{ form.tags }}
+    </pre
+      >
       <div class="form-group">
         <label for="level">Posicionamiento</label>
         <select id="level" class="form-control" v-model="form.level">
@@ -85,7 +89,13 @@
 
       <div class="form-group">
         <label for="tags-basic">Tags</label>
-        <b-form-tags input-id="tags-basic" v-model="form.tags" placeholder="Etiquetas relacionadas al proyecto" tag-pills tag-variant="primary"></b-form-tags>
+        <b-form-tags
+          input-id="tags-basic"
+          v-model="form.tags"
+          placeholder="Etiquetas relacionadas al proyecto"
+          tag-pills
+          tag-variant="primary"
+        ></b-form-tags>
         <FormError
           text="Se requiere al menos un tag"
           v-if="$v.form.tags.$error"
@@ -255,7 +265,7 @@ export default {
       try {
         this.loading = true;
 
-        let item = await this.$axios.post("/projects", {
+        await this.$axios.post("/projects", {
           ...this.form,
           tags: this.form.tags.toString()
         });

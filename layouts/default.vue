@@ -49,6 +49,7 @@ export default {
 
 <style lang="scss">
 .main-layout {
+  min-height: 100vh;
   padding-bottom: 4rem;
 
   @media (min-width: 992px) {

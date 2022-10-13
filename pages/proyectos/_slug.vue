@@ -9,7 +9,7 @@
               <h1 class="font-weight-bold">{{ item.title }}</h1>
 
               <a :href="item.url" target="_blank" class="btn btn-primary"
-                >Visitar sitio web</a
+                >Visitar sitio web <i class="fas fa-external-link-alt ml-2"></i></a
               >
             </div>
 
