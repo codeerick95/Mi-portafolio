@@ -214,8 +214,8 @@
                       O quizá quieras conocer
                       <nuxt-link
                         to="/proyectos"
-                        class="text-dark font-weight-bold text-decoration-none d-inline-block border-bottom"
-                        >mis proyectos</nuxt-link
+                        class="link-projects"
+                        >Mis proyectos</nuxt-link
                       >
                     </p>
                   </section>
@@ -287,7 +287,7 @@ export default {
     ...mapState(["items"]),
     ...mapGetters({
       currentUser: "currentUser",
-      getAppDark: "getAppDark",
+      getAppDark: "getAppDark"
     }),
   },
   methods: {
@@ -336,6 +336,12 @@ export default {
       max-width: 80%;
     }
   }
+
+  .link-projects {
+    color: $dark;
+    font-weight: 500;
+    text-decoration: underline;
+  }
 }
 
 .banner {
@@ -379,6 +385,7 @@ export default {
   padding: 3rem 0 2rem 0;
 
   .contact-button-item {
+    background-color: white;
     width: 100%;
     font-size: 14px;
     border: 2px dashed rgba($dark, 0.1);
@@ -396,6 +403,16 @@ export default {
 
   .banner__title {
     color: white;
+  }
+  
+  .contact-button-item {
+    background-color: rgba(white, .1);
+    color: white;
+    border: 2px dashed rgba(white, 0.1);
+  }
+
+  .link-projects {
+    color: $primary;
   }
 }
 </style>

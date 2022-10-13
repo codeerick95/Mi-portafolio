@@ -1,5 +1,5 @@
 <template>
-  <div class="portafolio animate__animated animate__fadeIn">
+  <div class="portafolio animate__animated animate__fadeIn" :class="{ 'portafolio-dark': getAppDark }">
     <section class="banner">
       <div class="container h-100 pt-5">
         <div class="row h-100">
@@ -15,14 +15,14 @@
                   <a
                     href="https://www.instagram.com/codeerick"
                     target="_blank"
-                    class="text-primary"
+                    class="text-primary font-weight-semibold"
                     >Instagram</a
                   >
                   o
                   <a
                     href="https://codepen.io/codeerick"
                     target="_blank"
-                    class="text-primary"
+                    class="text-primary font-weight-semibold"
                     >Codepen</a
                   >
                 </p>
@@ -30,7 +30,7 @@
                 <div class="text-right mt-4 mr-lg-2">
                   <button
                     type="button"
-                    class="btn btn--main btn--main-contacto text-uppercase mr-3"
+                    class="btn btn-contact mr-3"
                     @click="scrollTo()"
                   >
                     <i class="fas fa-arrow-circle-down"></i>
@@ -72,8 +72,8 @@
 
       <div class="row">
         <div class="col-12">
-          <p>
-              Otros proyectos en los que he trabajado han sido como <b>Freelance</b> por encargo de
+          <p class="lead">
+              Otros proyectos en los que he trabajado han sido como <span class="text-primary font-weight-semibold"><b>Freelance</b></span> por encargo de
               agencias, por lo que en esta web solo muestro mis proyectos
               personales.
             </p>
@@ -95,6 +95,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import CardProyecto from "@/components/portafolio/CardProyecto";
 
 export default {
@@ -125,6 +127,11 @@ export default {
       this.items = response.data.docs;
     },
   },
+  computed: {
+    ...mapGetters({
+      getAppDark: "getAppDark"
+    })
+  }
 };
 </script>
 
@@ -136,8 +143,9 @@ export default {
     }
   }
 
-  .btn--main-contacto {
-    font-size: 1.7em;
+  .btn-contact {
+    background-color: $primary;
+    font-size: 18px;
   }
 }
 
@@ -172,5 +180,9 @@ export default {
   p {
     font-size: 0.95em;
   }
+}
+
+.portafolio-dark {
+  color: white;
 }
 </style>

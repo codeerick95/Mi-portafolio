@@ -84,8 +84,12 @@
       </div>
 
       <div class="form-group">
-        <label for="tags-basic">Type a new tag and press enter</label>
+        <label for="tags-basic">Tags</label>
         <b-form-tags input-id="tags-basic" v-model="form.tags" placeholder="Etiquetas relacionadas al proyecto" tag-pills tag-variant="primary"></b-form-tags>
+        <FormError
+          text="Se requiere al menos un tag"
+          v-if="$v.form.tags.$error"
+        />
       </div>
 
       <div class="form-group">

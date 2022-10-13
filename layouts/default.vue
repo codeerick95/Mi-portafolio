@@ -14,7 +14,7 @@
 
     <NavRedesMobile />
 
-    <SwitchAppStyleMode />
+    <!-- <SwitchAppStyleMode /> -->
   </div>
 </template>
 
@@ -25,7 +25,7 @@ import HeaderApp from '@/components/global/HeaderApp'
 import HeaderMobile from '@/components/global/HeaderMobile'
 import NavRedesMobile from '@/components/global/NavRedesMobile'
 import BackButton from '@/components/global/BackButton'
-import SwitchAppStyleMode from '@/components/global/SwitchAppStyleMode'
+// import SwitchAppStyleMode from '@/components/global/SwitchAppStyleMode'
 
 // import { db } from '@/plugins/firebase.js'
 
@@ -35,7 +35,7 @@ export default {
     HeaderMobile,
     NavRedesMobile,
     BackButton,
-    SwitchAppStyleMode
+    // SwitchAppStyleMode
   },
   mounted() {
   },

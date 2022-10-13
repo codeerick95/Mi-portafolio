@@ -1,8 +1,9 @@
 <template>
-  <section class="container" v-if="item">
+  <section class="project-slug container pt-5" v-if="item">
     <div class="row">
       <div class="col-11">
-        <article class="card border-0 main-shadow">
+
+        <article class="card border-0 main-shadow" :class="{ 'card-dark': getAppDark }">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
               <h1 class="font-weight-bold">{{ item.title }}</h1>
@@ -20,8 +21,6 @@
               <div class="mt-5" v-html="item.description"></div>
 
               <section class="mt-5">
-                <h2 class="font-weight-bold mb-3">Galería</h2>
-
                 <div class="row">
                   <div
                     class="col-md-4"
@@ -30,7 +29,7 @@
                   >
                     <img
                       :src="image.url"
-                      :alt="image.description"
+                      :alt="image.description || `erickhl.com ${item.title}`"
                       class="img-fluid"
                     />
                   </div>
@@ -45,6 +44,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+
 export default {
   layout: "default",
   data() {
@@ -90,7 +91,23 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapGetters({
+      getAppDark: "getAppDark",
+    })
+  }
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.project-slug {
+  .card-dark {
+    background-color: rgba(white, .1);
+    color: white;
+
+    .text-muted {
+      color: rgba(white, .5) !important;
+    }
+  }
+}
+</style>

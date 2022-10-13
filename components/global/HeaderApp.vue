@@ -78,13 +78,17 @@
         </li>
       </ul>
 
-      <div class="nav-social__line" v-if="showNav"></div>
+      <div class="nav-social__line mb-3" v-if="showNav"></div>
+
+      <SwitchAppStyleMode />
     </nav>
   </header>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+
+import SwitchAppStyleMode from '@/components/global/SwitchAppStyleMode'
 
 export default {
   data() {
@@ -94,6 +98,9 @@ export default {
   },
   mounted() {
     this.calcularScroll();
+  },
+  components: {
+    SwitchAppStyleMode
   },
   methods: {
     calcularScroll() {
@@ -217,7 +224,7 @@ export default {
 
   &__line {
     width: 2px;
-    height: 120px;
+    height: 80px;
 
     background-color: rgba($dark, 0.7);
   }

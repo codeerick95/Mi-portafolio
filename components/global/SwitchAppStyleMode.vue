@@ -29,11 +29,13 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    bottom: 1.7rem;
-    right: 3.5rem;
-    z-index: 100;
+    // position: fixed;
+    // bottom: 1.5rem;
+    // right: 5rem;
+    // z-index: 100;
     transition: transform .5s;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 
     &:hover {
         cursor: pointer;

@@ -34,15 +34,22 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   layout: "default",
   data() {
     return {
       form: {
-        email: 'e@test.com',
-        password: 'secret',
+        email: "e@test.com",
+        password: "secret",
       },
     };
+  },
+  middleware({ store, redirect }) {
+    if(store.state.auth.loggedIn) {
+      redirect('/admin')
+    }
   },
   methods: {
     async login() {
@@ -54,12 +61,23 @@ export default {
           password,
         };
 
-        await this.$auth.loginWith('local', {data})
+        await this.$auth.loginWith("local", { data });
       } catch (error) {
         console.log(error);
       }
     },
   },
+  computed: {
+    ...mapState({
+      usuarioLogueado: (state) => state.auth.usuarioLogueado,
+    }),
+  },
+  // mounted() {
+  //   console.log(this.usuarioLogueado);
+  //   if (this.usuarioLogueado) {
+  //     this.$router.push("/");
+  //   }
+  // }
 };
 </script>
 
