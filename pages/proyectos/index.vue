@@ -1,7 +1,7 @@
 <template>
-  <div class="portafolio animate__animated animate__fadeIn" :class="{ 'portafolio-dark': getAppDark }">
+  <div class="portafolio pt-5 animate__animated animate__fadeIn" :class="{ 'portafolio-dark': getAppDark }">
     <section class="banner">
-      <div class="container h-100 pt-5">
+      <div class="container h-100">
         <div class="row h-100">
           <div class="col-12 h-100 d-flex flex-column justify-content-center">
             <div>

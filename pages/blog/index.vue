@@ -1,6 +1,6 @@
 <template>
-  <div class="blog animate__animated animate__fadeInLeft pb-5">
-    <div class="container banner mt-5">
+  <div class="blog pt-5 animate__animated animate__fadeInLeft pb-5" :class="{ 'blog-dark': getAppDark }">
+    <div class="container banner">
       <div class="row h-100">
         <div class="col-md-12 h-100 d-flex flex-column justify-content-center">
           <div class="row align-items-center mt-3">
@@ -126,6 +126,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import { posts } from "@/data/blog";
 
 import SubscribeButton from "@/components/blog/suscription/SubscribeButton";
@@ -167,6 +169,9 @@ export default {
     SubscribeForm
   },
   computed: {
+    ...mapGetters({
+      getAppDark: "getAppDark"
+    }),
     postsDestacados() {
       return this.posts.filter((item) => item.destacado);
     },
@@ -269,5 +274,9 @@ export default {
   .attribution {
     margin-top: -30%;
   }
+}
+
+.blog-dark {
+  color: white;
 }
 </style>
