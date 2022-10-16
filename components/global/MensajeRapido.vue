@@ -29,12 +29,16 @@ export default {
 <style lang="scss">
 .mensaje-rapido {
   border: 3px solid rgba($dark, 0.8);
-  padding-top: 2.5rem;
+  padding-top: 3.5rem;
   padding-bottom: 2rem;
 
   -webkit-box-shadow: 2px 2px 15px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 2px 15px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 15px -4px rgba(0, 0, 0, 0.75);
+
+  @media (min-width: 768px) {
+    padding-top: 2.5rem;
+  }
 
   &__titulo {
     font-size: 1.1em;

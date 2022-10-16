@@ -161,7 +161,7 @@
           </section> -->
 
           <section id="contacto" class="contact mt-5">
-            <div class="container">
+            <div class="container px-0">
               <div class="row justify-content-center">
                 <div class="col-12">
                   <mensaje-rapido
