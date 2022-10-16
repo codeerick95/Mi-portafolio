@@ -1,5 +1,8 @@
 <template>
-  <div class="blog pt-5 animate__animated animate__fadeInLeft pb-5" :class="{ 'blog-dark': getAppDark }">
+  <div
+    class="blog pt-5 animate__animated animate__fadeInLeft pb-5"
+    :class="{ 'blog-dark': getAppDark }"
+  >
     <div class="container banner">
       <div class="row h-100">
         <div class="col-md-12 h-100 d-flex flex-column justify-content-center">
@@ -82,7 +85,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h2 class="blog__sub">ARTÍCULOS DESTACADOS</h2>
+                <h2 class="blog__sub mt-5">ARTÍCULOS DESTACADOS</h2>
               </div>
             </div>
 
@@ -117,7 +120,7 @@
 
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-5">
+        <div class="col-md-5">
           <SubscribeForm />
         </div>
       </div>
@@ -126,7 +129,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 
 import { posts } from "@/data/blog";
 
@@ -166,11 +169,11 @@ export default {
   components: {
     CardBlog,
     SubscribeButton,
-    SubscribeForm
+    SubscribeForm,
   },
   computed: {
     ...mapGetters({
-      getAppDark: "getAppDark"
+      getAppDark: "getAppDark",
     }),
     postsDestacados() {
       return this.posts.filter((item) => item.destacado);
