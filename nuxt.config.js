@@ -118,7 +118,8 @@ export default {
     "@nuxtjs/auth-next",
     '@nuxtjs/dotenv',
     'vue-sweetalert2/nuxt',
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    'cookie-universal-nuxt'
   ],
   bootstrapVue: {
     bootstrapCSS: false,

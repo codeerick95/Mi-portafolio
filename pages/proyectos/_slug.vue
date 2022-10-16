@@ -20,7 +20,7 @@
                 {{ item.summary }}
               </p>
 
-              <div v-html="item.description"></div>
+              <div class="mt-4" v-html="item.description"></div>
 
               <Gallery :images="item.images" />
             </section>

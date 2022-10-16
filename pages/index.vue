@@ -347,6 +347,12 @@ export default {
 .banner {
   height: 95vh;
 
+  @media (min-width: 768px) {
+      max-width: 90%;
+
+      margin: 0 auto;
+    }
+
   &__sub {
     font-size: 1.3em;
     font-weight: 400;

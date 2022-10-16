@@ -37,6 +37,10 @@ export default {
     BackButton,
     // SwitchAppStyleMode
   },
+  async fetch(context) {
+    console.log('Server')
+    console.log(context)
+  },
   mounted() {
   },
   computed: {

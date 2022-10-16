@@ -1,5 +1,8 @@
 <template>
-  <div class="portafolio pt-5 animate__animated animate__fadeIn" :class="{ 'portafolio-dark': getAppDark }">
+  <div
+    class="portafolio pt-5 animate__animated animate__fadeIn"
+    :class="{ 'portafolio-dark': getAppDark }"
+  >
     <section class="banner">
       <div class="container h-100">
         <div class="row h-100">
@@ -56,7 +59,7 @@
     </section>
 
     <!-- Proyectos -->
-    <div id="proyectos" class="proyectos container">
+    <div id="proyectos" class="proyectos container mt-5 mt-md-1">
       <!-- <div class="row">
         <div class="col-12">
           <mensaje-rapido titulo="Proyectos realizados">
@@ -73,16 +76,20 @@
       <div class="row">
         <div class="col-12">
           <p class="lead">
-              Otros proyectos en los que he trabajado han sido como <span class="text-primary font-weight-semibold"><b>Freelance</b></span> por encargo de
-              agencias, por lo que en esta web solo muestro mis proyectos
-              personales.
-            </p>
+            A lo largo de mi desempeño como programador he desarrollado otros
+            proyectos como
+            <span class="text-primary font-weight-semibold"
+              ><b>Freelance</b></span
+            >
+            por encargo de agencias, por lo que en esta web solo muestro mis
+            proyectos y prácticas personales.
+          </p>
         </div>
       </div>
 
       <div class="proyectos__lista row">
         <div
-          class="col-md-6 px-5"
+          class="col-md-6 px-1 px-md-5 mb-4 mb-md-0"
           :class="{ 'portafolio__mb-6': index % 2 != 0 }"
           v-for="(item, index) in items"
           :key="index"
@@ -95,7 +102,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 
 import CardProyecto from "@/components/portafolio/CardProyecto";
 
@@ -119,7 +126,7 @@ export default {
         scrollTo: elemento,
         updateHistory: false,
         duration: 700,
-        offset: -50
+        offset: -50,
       });
     },
     async getItems() {
@@ -129,9 +136,9 @@ export default {
   },
   computed: {
     ...mapGetters({
-      getAppDark: "getAppDark"
-    })
-  }
+      getAppDark: "getAppDark",
+    }),
+  },
 };
 </script>
 
@@ -174,7 +181,9 @@ export default {
 
 .proyectos {
   &__lista {
-    margin-top: 4rem;
+    @media (min-width: 768px) {
+      margin-top: 4rem;
+    }
   }
 
   p {
