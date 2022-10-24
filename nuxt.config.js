@@ -24,6 +24,7 @@ export default {
         rel: "stylesheet",
         href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
       },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' }
       // {
       //   rel: 'stylesheet',
       //   href: 'https://cdn.quilljs.com/1.3.6/quill.snow.css'
@@ -74,7 +75,8 @@ export default {
     { src: "./plugins/smooth-scroll.js", mode: "client" },
     { src: "./plugins/pdf.js", mode: "client" },
     { src: "./plugins/vuelidate.js" },
-    { src: '~plugins/nuxt-quill-plugin', ssr: false }
+    { src: '~plugins/nuxt-quill-plugin', ssr: false },
+    { src: '~plugins/apps-components', mode: "client" }
   ],
 
   env: {

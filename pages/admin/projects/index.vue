@@ -1,29 +1,27 @@
 <template>
-  <section
-    class="admin-layout main-shadow animate__animated animate__fadeIn animate__faster"
-  >
-    <div class="admin-layout-header d-flex justify-content-between">
-      <h1 class="title">Proyectos</h1>
+  <section class="animate__animated animate__fadeIn animate__faster">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1 class="admin-page-title">Proyectos</h1>
 
       <router-link
         :to="{ name: 'admin-projects-create' }"
         type="button"
-        class="btn btn-info"
+        class="admin-button admin-button-primary"
       >
         Registrar proyecto
-        <i class="fas fa-plus ml-2"></i>
+        <i class="fas fa-plus ml-1"></i>
       </router-link>
     </div>
 
     <AdminLoading v-if="loading" />
 
-    <section class="mt-5 position-relative" v-else>
+    <section class="admin-card mt-4 position-relative" v-else>
       <div
         class="table-options d-flex justify-content-between align-items-start"
       >
         <button
           type="button"
-          class="btn btn-link text-dark text-uppercase font-weight-bold"
+          class="admin-button text-uppercase font-weight-bold"
           @click="$bvModal.show('modal-filters')"
         >
           <i class="fas fa-filter"></i>
@@ -32,16 +30,12 @@
 
         <section class="d-flex align-items-center">
           <div class="mr-3">
-            <button
-              type="button"
-              class="table-header-option"
-              @click="getItems()"
-            >
+            <button type="button" class="admin-button" @click="getItems()">
               <i class="fas fa-sync-alt"></i>
             </button>
           </div>
 
-          <form @submit.prevent="search()" class="form-search my-0 py-0">
+          <!-- <form @submit.prevent="search()" class="form-search my-0 py-0">
             <div
               class="form-group mb-0 d-flex justify-content-end d-flex align-items-center h-100"
             >
@@ -54,12 +48,14 @@
 
               <button class="btn btn-info py-2 ml-2">Buscar</button>
             </div>
-          </form>
+          </form> -->
+
+          <AdminSearch placeholder="Buscar por nombre" />
         </section>
       </div>
 
-      <div class="table-container table-responsive">
-        <table class="main-table" width="100%">
+      <div class="admin-table-container">
+        <table class="admin-table" width="100%">
           <thead class="text-center">
             <tr>
               <th scope="col"></th>
@@ -72,19 +68,26 @@
           </thead>
           <tbody>
             <tr v-for="(item, index) in items" :key="index">
-              <td class="cell">
-                <!-- <img
-                  :src="item.foto_real.url"
-                  :alt="item.nombre"
-                  class="table-img"
-                /> -->
+              <td>
+                <div class="admin-table-image">
+                  <img
+                    :src="item.image.url"
+                    :alt="item.name"
+                    v-if="item.image"
+                  />
+                </div>
               </td>
-              <td class="cell text">
-                <nuxt-link to="/">
+              <td>
+                <a
+                  :href="`${config.domain}/proyectos/${item.slug}`"
+                  target="_blank"
+                  class="admin-table-text"
+                >
                   {{ item.title }}
-                </nuxt-link>
+                  <i class="ri-external-link-line"></i>
+                </a>
               </td>
-              <td class="cell text text-uppercase text-center">
+              <td class="text-center">
                 <!-- <b-form-checkbox
                   v-model="items[index].estado"
                   name="check-button"
@@ -94,11 +97,13 @@
                 >
                 </b-form-checkbox> -->
 
-                <span class="badge" :class="`badge-${getStatus(item).color}`">{{
-                  item.status
-                }}</span>
+                <span
+                  class="admin-badge text-white"
+                  :class="`admin-badge-${getStatus(item).color}`"
+                  >{{ getStatus(item).label }}</span
+                >
               </td>
-              <td class="cell text text-uppercase text-center">
+              <td class="text-uppercase text-center">
                 <!-- <b-form-checkbox
                   v-model="items[index].favoritos"
                   name="check-button"
@@ -109,7 +114,7 @@
                 </b-form-checkbox> -->
                 <span class="small">{{ item.level }}</span>
               </td>
-              <td class="cell text-center">
+              <td class="text-center">
                 <b-dropdown
                   size="lg"
                   variant="link"
@@ -229,15 +234,20 @@
 <script>
 import { mapGetters } from "vuex";
 
+import { config } from "@/config/app-config";
+
 import { PAGINATE_ITEMS } from "@/utils/static-values.js";
 
 import AdminLoading from "@/components/admin/AdminLoading";
+
+// import { AdminSearch } from 'apps-components'
 
 export default {
   layout: "admin",
   middleware: "auth",
   data() {
     return {
+      config,
       items: [],
       pagination: {
         currentPage: 1,
@@ -252,10 +262,12 @@ export default {
       projectStatus: [
         {
           key: "ACTIVATED",
-          color: "success",
+          label: "Activo",
+          color: "primary",
         },
         {
           key: "DEACTIVATED",
+          label: "Desactivado",
           color: "danger",
         },
       ],
@@ -266,6 +278,7 @@ export default {
   },
   components: {
     AdminLoading,
+    // AdminSearch
   },
   methods: {
     async getItems() {
@@ -297,13 +310,13 @@ export default {
     },
     async deleteItem(id, index) {
       try {
-        console.log(id)
-        console.log(index)
+        console.log(id);
+        console.log(index);
 
         await this.$axios.delete(`/projects/${id}`);
 
         this.items.splice(index, 1);
-        console.log(this.items)
+        console.log(this.items);
 
         // this.getItems();
 
@@ -325,4 +338,5 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+</style>

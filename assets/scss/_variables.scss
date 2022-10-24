@@ -9,3 +9,19 @@ $app-gray: #717B84;
 $app-light-gray: #f5f5f5;
 
 $admin-primary: #7366ff;
+
+// Admin
+$md: 768px;
+
+$header-height: 70px;
+$admin-dark: #252b3b;
+$admin-gray: #7b8186;
+$admin-light: #f1f5f7;
+$admin-blue: #4aa3ff;
+$admin-red: #D63230;
+
+// Variables dinámicas
+:root {
+    --color-primary: #42d392;
+    --color-primary-dark: #42b883;
+}

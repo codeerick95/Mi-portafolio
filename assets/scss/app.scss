@@ -9,7 +9,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 @import "./reset";
-@import "./layouts/admin-layout";
+
+@import "~apps-components/dist/styles/variables";
+// @import "~apps-components/dist/styles/mixins";
+@import "~apps-components/dist/styles/app";
 
 .main-layout {
   // background-color: $dark;
@@ -50,9 +53,9 @@ label {
   margin-bottom: 0;
 }
 
-input {
-  height: 45px !important;
-}
+// input {
+//   height: 45px !important;
+// }
 
 textarea {
   min-height: 75px;
@@ -127,35 +130,38 @@ textarea {
 
 /* Scroll */
 body::-webkit-scrollbar {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 body::-webkit-scrollbar:vertical {
-    width:11px;
+  width: 11px;
 }
 
-body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
-    display: none;
-} 
+body::-webkit-scrollbar-button:increment,
+body::-webkit-scrollbar-button {
+  display: none;
+}
 
 body::-webkit-scrollbar:horizontal {
-    height: 10px;
+  height: 10px;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #c0c2c0;
-    border-radius: 20px;
-    border: 2px solid #f1f2f3;
+  background-color: #c0c2c0;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
 
-    &:hover {
-      background-color: #acadac;
-    }
+  &:hover {
+    background-color: #acadac;
+  }
 }
 
 body::-webkit-scrollbar-track {
-    border-radius: 10px;  
+  border-radius: 10px;
 }
 
 .font-weight-400 {
   font-weight: 400 !important;
 }
+
+// ehldev-admin-components

@@ -3,10 +3,6 @@
     <AdminLoading v-if="loading" />
 
     <form action="" @submit.prevent="submit()" v-else>
-      <pre>
-      {{ form.tags }}
-    </pre
-      >
       <div class="form-group">
         <label for="level">Posicionamiento</label>
         <select id="level" class="form-control" v-model="form.level">
@@ -104,45 +100,63 @@
 
       <div class="form-group">
         <label for="image">Imagen destacada</label>
+        <p class="text-gray text-small">Imagen destacada del proyecto</p>
 
-        <section>
+        <section class="mt-2">
+          <div class="preview-image mb-2" v-if="form.image">
+            <img :src="form.image.url" alt="" />
+          </div>
+
           <button
             type="button"
-            class="btn btn-info"
+            class="admin-button admin-button-blue d-flex align-items-center"
             @click="uploadFiles('image')"
           >
             Seleccionar
+            <i class="ri-upload-line ml-2"></i>
           </button>
         </section>
 
         <FormError text="El campo es requerido" v-if="$v.form.image.$error" />
 
-        <section class="mt-5" v-if="form.image">
+        <!-- <section class="mt-5" v-if="form.image">
           <img :src="form.image.url" alt="" class="img-fluid" />
-        </section>
+        </section> -->
       </div>
 
       <div class="form-group">
         <label for="images">Imágenes</label>
+        <p class="text-gray text-small">
+          Puede selecciona imágenes para mostrar una galería.
+        </p>
 
-        <section>
+        <section class="mt-2">
           <button
             type="button"
-            class="btn btn-info"
+            class="admin-button admin-button-blue d-flex align-items-center"
             @click="uploadFiles('images')"
           >
-            Subir imágenes
+            Seleccionar
+            <i class="ri-upload-line ml-2"></i>
           </button>
         </section>
+
+        <pre>
+          {{ form.images }}
+        </pre>
 
         <section class="mt-5">
           <div class="row">
             <div
-              class="col-md-4 text-center"
-              v-for="item in form.images"
-              :key="item.id"
+              class="col-md-4 mb-3 text-center"
+              v-for="(item, i) in form.images"
+              :key="i"
             >
-              <img :src="item.url" alt="" class="preview-image" />
+              <div
+                class="preview-image mb-2"
+              >
+                <img :src="item.url" alt="" />
+              </div>
 
               <div class="mt-3">
                 <input
@@ -184,7 +198,8 @@ import helpers from "@/utils/helpers";
 import cloudinaryConfig from "@/config/cloudinary";
 
 import AdminLoading from "@/components/admin/AdminLoading";
-import FormError from "@/components/global/FormError";
+// import FormError from "@/components/global/FormError";
+// import NuxtUploadImages from "@/components/admin/form/NuxtUploadImages";
 
 export default {
   name: "FormProject",
@@ -240,7 +255,8 @@ export default {
   },
   components: {
     AdminLoading,
-    FormError,
+    // FormError,
+    // NuxtUploadImages
   },
   watch: {
     "form.title": function (val) {
@@ -267,7 +283,7 @@ export default {
 
         await this.$axios.post("/projects", {
           ...this.form,
-          tags: this.form.tags.toString()
+          tags: this.form.tags.toString(),
         });
 
         this.loading = false;
@@ -320,8 +336,14 @@ export default {
         console.log(error);
       }
     },
+    mainImageSelected(images) {
+      this.form.image = {
+        url: images[0].previewUrl,
+        description: images[0].file.name,
+      };
+    },
   },
 };
 </script>
 
-<style></style>
+<style lang="scss"></style>

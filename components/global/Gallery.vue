@@ -13,8 +13,10 @@
       />
     </div>
 
-    <b-modal id="gallery-modal" size="xl" centered hide-header hide-footer>
-      <img :src="current.url" alt="" class="img-fluid" v-if="current">
+    <b-modal id="gallery-modal" size="lg" centered hide-header hide-footer>
+      <div class="d-flex justify-content-center">
+        <img :src="current.url" alt="" class="img-fluid" v-if="current">
+      </div>
     </b-modal>
   </section>
 </template>
