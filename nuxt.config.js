@@ -76,7 +76,7 @@ export default {
     { src: "./plugins/pdf.js", mode: "client" },
     { src: "./plugins/vuelidate.js" },
     { src: '~plugins/nuxt-quill-plugin', ssr: false },
-    { src: '~plugins/apps-components', mode: "client" }
+    { src: '~plugins/apps-components', mode: "client", ssr: false }
   ],
 
   env: {
