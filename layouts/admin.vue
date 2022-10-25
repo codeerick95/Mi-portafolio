@@ -20,7 +20,7 @@
     </template>
   </AdminLayout> -->
   <div>
-    
+    <Nuxt />
   </div>
 </template>
 
