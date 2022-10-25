@@ -2236,10 +2236,10 @@ aos@^3.0.0-beta.6:
     lodash.debounce "^4.0.8"
     lodash.throttle "^4.1.1"
 
-apps-components@0.1.38:
-  version "0.1.38"
-  resolved "https://registry.yarnpkg.com/apps-components/-/apps-components-0.1.38.tgz#e2990613a7414f6d072bd68eec14ee62cbb82220"
-  integrity sha512-4QjzUrWGxhN+7PjhvEc1BEF3svZcOJalV5ebnT1PbrE1G6d85oonqP0PTcEOXgcxUtTkD4iwiSR7GUqW4i4lGg==
+apps-components@0.1.39:
+  version "0.1.39"
+  resolved "https://registry.yarnpkg.com/apps-components/-/apps-components-0.1.39.tgz#fb6074552a435dca34651e2e186076ae349b7d55"
+  integrity sha512-S/UzQck/BKb52eo71AQ2DEqH0g54j2rhes9MNSCZF/L43mORDSFLQy+dTeNsEXlK8K+wUuLWrI2RgoM7QnxmwA==
   dependencies:
     copy-webpack-plugin "6.4.0"
     core-js "^3.6.5"
