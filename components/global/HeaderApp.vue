@@ -21,9 +21,9 @@
           <!-- <nuxt-link to="/">Contacto</nuxt-link> -->
           <a href="" @click.prevent="contacto()">Contacto</a>
         </li>
-        <li v-if="currentUser">
-          <nuxt-link to="/admin" class="main-nav-link text-primary font-weight-bold">Admin</nuxt-link>
-        </li>
+        <!-- <li v-if="currentUser">
+          <a :href="process.env.ADMIN_URL" class="main-nav-link text-primary font-weight-bold">Admin</a>
+        </li> -->
       </ul>
     </nav>
 
