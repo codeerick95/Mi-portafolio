@@ -192,8 +192,6 @@ html2canvas(document.querySelector("#capture"), options).then(canvas => {
 <script>
 import { appConfig } from "@/appConfig";
 
-import Prism from "~/plugins/prism";
-
 import { posts } from "@/data/blog";
 
 import AutorInfo from "@/components/blog/AutorInfo";
@@ -241,7 +239,6 @@ export default {
   },
 
   mounted() {
-    Prism.highlightAll();
   },
 
   components: {

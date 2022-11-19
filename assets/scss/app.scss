@@ -4,15 +4,10 @@
 @import 'bootstrap-vue/src/index';
 
 @import "./utils";
-@import "./librerias/prism";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 @import "./reset";
-
-@import "~apps-components/dist/styles/variables";
-// @import "~apps-components/dist/styles/mixins";
-@import "~apps-components/dist/styles/app";
 
 .main-layout {
   // background-color: $dark;

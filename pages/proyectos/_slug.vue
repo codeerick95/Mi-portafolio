@@ -8,7 +8,7 @@
         >
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-              <h1 class="font-weight-bold">{{ item.title }}</h1>
+              <h1 class="font-weight-bold">{{ item.name }}</h1>
 
               <a :href="item.url" target="_blank" class="btn btn-primary"
                 >Visitar sitio web <i class="fas fa-external-link-alt ml-2"></i
