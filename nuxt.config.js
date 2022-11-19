@@ -147,7 +147,7 @@ export default {
     }
   }, */
   "google-gtag": {
-    id: "G-FP2YNDLT8Z",
+    id: "G-G6BE5MP8YY",
     config: {
       anonymize_ip: true,
       send_page_view: false,
