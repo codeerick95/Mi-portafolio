@@ -11,7 +11,7 @@
       <nuxt-link
         :to="{ name: 'proyectos-slug', params: { slug: item.slug } }"
         class="title text-decoration-none my-0"
-        >{{ item.title }}</nuxt-link
+        >{{ item.name }}</nuxt-link
       >
 
       <p class="my-0">
