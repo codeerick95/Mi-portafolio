@@ -73,7 +73,7 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          content: this.item.tags,
+          content: JSON.parse(this.item.tags),
         },
       ],
     };
