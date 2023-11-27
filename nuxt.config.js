@@ -56,9 +56,9 @@ export default {
     { src: "./plugins/smooth-scroll.js", mode: "client" }
   ],
 
-  env: {
-    PROJECT_STATUS: 'DEVELOP'
-  },
+  // env: {
+  //   PROJECT_STATUS: 'DEVELOP'
+  // },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
