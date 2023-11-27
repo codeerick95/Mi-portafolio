@@ -2,8 +2,7 @@ import api from "@/api/api.js";
 
 export const state = () => ({
   items: [],
-  products: [
-    {
+  products: [{
       id: 1,
       name: "Producto",
       stock: 3,
@@ -83,11 +82,15 @@ export const mutations = {
 };
 
 export const actions = {
-  nuxtServerInit({commit}, context) {
-	let darkModeValue = context.$cookies.get('erickhl-darkmode')
-	commit('SET_DARK_MODE', darkModeValue)
+  nuxtServerInit({
+    commit
+  }, context) {
+    let darkModeValue = context.$cookies.get('erickhl-darkmode')
+    commit('SET_DARK_MODE', darkModeValue)
   },
-  getItems({ commit }) {
+  getItems({
+    commit
+  }) {
     return new Promise((resolve) => {
       api.getItems().then((data) => commit("SET_ITEMS", data));
 
@@ -121,7 +124,9 @@ export const actions = {
     // Restaurar inventario
     context.commit("INCREMENT_PRODUCT_QUANTITY", item);
   },
-  setProductoSeleccionado({ commit }, data) {
+  setProductoSeleccionado({
+    commit
+  }, data) {
     commit("ASIGNAR_PRODUCTO_SELECCIONADO", data);
   },
 };

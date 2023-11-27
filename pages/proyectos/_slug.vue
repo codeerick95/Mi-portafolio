@@ -46,7 +46,7 @@ export default {
   async asyncData(context) {
     try {
       let response = await context.$axios.get(
-        `/public/projects/${context.params.slug}`
+        `/api/public/projects/${context.params.slug}`
       );
 
       if (!response.data.payload) {
