@@ -130,7 +130,7 @@ export default {
       });
     },
     async getItems() {
-      let response = await this.$axios.get("/api/public/projects");
+      let response = await this.$axios.get("/api/public/projectsw");
       this.items = response.data.docs;
     },
   },
