@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -22,7 +24,10 @@ export default {
         rel: "stylesheet",
         href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
       },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' }
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css",
+      },
     ],
     script: [
       {
@@ -31,7 +36,7 @@ export default {
       },
       {
         src: "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js",
-      }
+      },
     ],
   },
 
@@ -40,7 +45,7 @@ export default {
     {
       src: "./assets/scss/app.scss",
       lang: "scss",
-    }
+    },
   ],
 
   server: {
@@ -50,10 +55,30 @@ export default {
   // target: "server",
   target: "static",
 
+  generate: {
+    async routes() {
+      let response = await fetch(
+        `http://localhost:3000/api/public/projects`
+      );
+      response = await response.json()
+
+      console.log('Response');
+      console.log(response);
+
+      let routes = [];
+
+      if (response.docs.length) {
+        routes = response.docs.map((item) => `/proyectos/${item.slug}`);
+      }
+
+      return routes
+    },
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: "./plugins/aos.js", mode: "client" },
-    { src: "./plugins/smooth-scroll.js", mode: "client" }
+    { src: "./plugins/smooth-scroll.js", mode: "client" },
   ],
 
   // env: {
@@ -95,13 +120,13 @@ export default {
     "@nuxtjs/google-gtag",
     "@nuxtjs/axios",
     "@nuxtjs/auth-next",
-    '@nuxtjs/dotenv',
-    '@nuxtjs/toast',
-    'cookie-universal-nuxt'
+    "@nuxtjs/dotenv",
+    "@nuxtjs/toast",
+    "cookie-universal-nuxt",
   ],
   bootstrapVue: {
     bootstrapCSS: false,
-    bootstrapVueCSS: false
+    bootstrapVueCSS: false,
   },
   styleResources: {
     scss: ["./assets/scss/_variables.scss"],
@@ -131,7 +156,7 @@ export default {
     debug: true,
   },
   axios: {
-    baseURL: process.env.API_URL
+    baseURL: process.env.API_URL,
   },
   auth: {
     redirect: {
