@@ -11,6 +11,12 @@ const posts = [
 		descripcionCorta: 'En este tutorial veremos como utilizar la librería html2canvas para generar una captura a un elemento o sección en específico.',
 		imagenPrincipal: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/GNOME_Screenshot_icon_2018.svg/1200px-GNOME_Screenshot_icon_2018.svg.png',
 		destacado: false
+	},
+  {
+		titulo: 'Tomar capturas y generar imagen descargable con Javascript 3',
+		descripcionCorta: 'En este tutorial veremos como utilizar la librería html2canvas para generar una captura a un elemento o sección en específico.',
+		imagenPrincipal: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/GNOME_Screenshot_icon_2018.svg/1200px-GNOME_Screenshot_icon_2018.svg.png',
+		destacado: false
 	}
 ]
 
