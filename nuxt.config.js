@@ -71,20 +71,20 @@ export default {
     locales: ["es"],
   },
 
-  pwa: {
-    manifest: {
-      name: "Web personal @ehldev",
-      short_name: '@ehldev',
-      description: 'Web personal @ehldev',
-      lang: "es",
-      useWebmanifestExtension: false,
-    },
-    workbox: {
-      preCaching: [
-        '/cv.pdf'
-      ]
-    }
-  },
+  // pwa: {
+  //   manifest: {
+  //     name: "Web personal @ehldev",
+  //     short_name: '@ehldev',
+  //     description: 'Web personal @ehldev',
+  //     lang: "es",
+  //     useWebmanifestExtension: false,
+  //   },
+  //   workbox: {
+  //     preCaching: [
+  //       '/cv.pdf'
+  //     ]
+  //   }
+  // },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
